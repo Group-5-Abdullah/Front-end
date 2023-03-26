@@ -1,4 +1,4 @@
-export default function Food (){
+export default function GiftsYourEvent (){
     return (
         <div>
             
