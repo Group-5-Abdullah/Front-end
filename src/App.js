@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
@@ -15,6 +15,7 @@ function App() {
     <div className="App">
     {isAuthenticated ? <Home /> : <LoginButton/>}
     {isAuthenticated ? "" : <About/>}
+ 
      <UserProfile/> 
      <LogoutButton/>
      
