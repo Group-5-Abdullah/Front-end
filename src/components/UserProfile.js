@@ -4,18 +4,23 @@ import Home from "./Home";
 function UserProfile() {
     const { user, isAuthenticated, isLoading } = useAuth0();
 
-    if(isLoading){
+    if (isLoading) {
         return <div>Loading!</div>
     }
 
+    if(isAuthenticated){
+        localStorage.setItem('user_email',user.email);
+    }
+        
+
     return (
-         isAuthenticated && (
+        isAuthenticated && (
             <div>
-                <img src={user.picture}/>
+                <img src={user.picture} />
                 <h2>{user.name}</h2>
                 <p>{user.email}</p>
             </div>
-         )
+        )
     )
 };
 
