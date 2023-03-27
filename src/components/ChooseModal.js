@@ -24,7 +24,7 @@ function ChooseModal(props) {
   }
  useEffect(()=>{
   getReq();
- },[chooseArr])
+ },[])
   return (
     <Modal
       size="lg"
