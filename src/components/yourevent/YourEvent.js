@@ -16,8 +16,11 @@ import YouEventModal from './YourEventModal';
 export default function YourEvent() {
     const [eventArr, setEventArr] = useState([])
     const userEmail = localStorage.getItem('user_email')
+    const serverUrl = `${process.env.REACT_APP_serverURL}events/${userEmail}`;
+    console.log(serverUrl);
     const sendReq = async () => {
-        const serverUrl = `${process.env.REACT_APP_serverURL}events/${userEmail}`;
+        // const serverUrl = `${process.env.REACT_APP_serverURL}events/${userEmail}`;
+        
         const result = await fetch(serverUrl);
         const data = await result.json();
         setEventArr(data)
@@ -26,7 +29,7 @@ export default function YourEvent() {
     useEffect(() => {
 
         sendReq();
-    }, [eventArr])
+    }, [])
 
     const [showFlag, setShowFlag] = useState(false);
     const [clickedEvent, setClickedEvent] = useState({});
