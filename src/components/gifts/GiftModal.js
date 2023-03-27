@@ -13,6 +13,7 @@ function GiftModal(props){
           gift_price: e.target.gift_price.value,
           gift_quantity:e.target.gift_quantity.value,
           user_email: user_email,
+          eventid:props.eventid
         };
         // const obje={
         //   user_email:e.target.user_email.value

@@ -7,11 +7,16 @@ import { useEffect,useState } from "react";
 function Gifts() {
     const [datafromApi, setDatafromApi] = useState([]);
 
+  const serverUrl = `${process.env.REACT_APP_serverURL}gifts`;
   const sendReq= ()=>{axios.get(serverUrl).then((resp) => {
     setDatafromApi(resp.data)
 })};
 useEffect(()=>{
     sendReq()
+
+},[]);
+
+
 
 
   return (
