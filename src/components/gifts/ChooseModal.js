@@ -7,8 +7,10 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import GiftModal from "./GiftModal";
 function ChooseModal(props) {
+    const [clickedItem,setClickedItem]=useState();
     const [showFlag,setShowFlag]=useState(false);
-    function modalExpose(){
+    function modalExpose(item){
+        setClickedItem(item);
         setShowFlag(true);
     }
     const handleClose = () => {
@@ -50,11 +52,11 @@ function ChooseModal(props) {
                     </p>
                   </Card.Body>
                   <Card.Footer>
-                    <Button variant="primary" onClick={()=>{modalExpose()}}>
+                    <Button variant="primary" onClick={()=>{modalExpose(item)}}>
                       Submit
                     </Button>
                     <GiftModal showFlag={showFlag} handleClose={handleClose}
-            item={props.item} key={item.eventid} eventid={item.eventid} />
+            gift={props.item} key={item.eventid} item={clickedItem} />
                   </Card.Footer>
                 </Card>
               </Col>
