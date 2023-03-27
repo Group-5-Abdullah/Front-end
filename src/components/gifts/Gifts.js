@@ -12,13 +12,8 @@ function Gifts() {
     setDatafromApi(resp.data)
 })};
 useEffect(()=>{
-    sendReq()
-
-},[]);
-
-
-
-
+  sendReq()
+},[])
   return (
     <Row xs={1} md={4} className="g-4">
       {datafromApi.map((item) => {
