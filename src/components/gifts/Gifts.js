@@ -6,13 +6,13 @@ import Gift from "./Gift";
 import { useEffect,useState } from "react";
 function Gifts() {
     const [datafromApi, setDatafromApi] = useState([]);
-  const serverUrl = "https://back-end-production-7df4.up.railway.app/gifts";
+
   const sendReq= ()=>{axios.get(serverUrl).then((resp) => {
     setDatafromApi(resp.data)
 })};
 useEffect(()=>{
     sendReq()
-},[]);
+
 
   return (
     <Row xs={1} md={4} className="g-4">
