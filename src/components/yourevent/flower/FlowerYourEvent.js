@@ -24,14 +24,14 @@ function FlowerYourEvent(props) {
          SendReq();
      }, [])
 
-     const handleDelete = async () => {
+     const handleDelete = async (item) => {
        
         const requestOptions = {
             method: 'DELETE',
            
         };
         
-        const res = await fetch(`${process.env.REACT_APP_serverURL}flower/${props.clickedEvent.eventid}`, requestOptions);
+        const res = await fetch(`${process.env.REACT_APP_serverURL}flower/${props.clickedEvent.eventid}?id=${item.id}`, requestOptions);
         const Data = await res.json();
         setMyFlowersArr(Data)
     }
@@ -46,7 +46,7 @@ function FlowerYourEvent(props) {
                                 <Card.Img variant="top" src={`${item.flower_image}`} />
                                 <Card.Title>{item.flower_title}</Card.Title>
                                 <Button variant="danger"  onClick={()=>{
-                                    handleDelete();
+                                    handleDelete(item);
                                 }}>
                                     delete </Button>
 

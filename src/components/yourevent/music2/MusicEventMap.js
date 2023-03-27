@@ -1,26 +1,26 @@
-// import Row from 'react-bootstrap/Row';
+import Row from 'react-bootstrap/Row';
 
 
-// import Container from 'react-bootstrap/Container';
-// import MusicEventCard from './MusicEventCard';
-// export default function MusicEventMap (props){
+import Container from 'react-bootstrap/Container';
+import MusicEventCard from './MusicEventCard';
+export default function MusicEventMap (props){
 
-//     const setDELETEDArr = (Arr) => {
-//         props.setDELETEDArr(Arr)
-//      }
+    const setDELETEDArr = (Arr) => {
+        props.setDELETEDArr(Arr)
+     }
     
-//     return (
-//         <Container>
+    return (
+        <Container>
            
-//              <Row xs={1} md={4} className="g-4">
-//             {  props.fetchRes.map((element)=>{
-//                   return(
+             <Row xs={1} md={4} className="g-4">
+            {  props.fetchRes.map((element)=>{
+                  return(
                     
-//             // <MusicEventCard setDELETEDArr={setDELETEDArr} key={element.track_url} musicEvent={element} />
+            <MusicEventCard setDELETEDArr={setDELETEDArr} key={element.track_url} clickedEvent={props.clickedEvent} musicEvent={element} />
          
-//             )
-//               })}
-//               </Row>
-//               </Container>
-//     )
-// }
+            )
+              })}
+              </Row>
+              </Container>
+    )
+}

@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Food.css';
-import { useAuth0 } from "@auth0/auth0-react";
+import FoodModal from './FoodModal';
 
 function Food() {
   const [recipes, setRecipes] = useState([]);
   const [recipeType, setRecipeType] = useState('main course');
-  const { user } = useAuth0();
 
   useEffect(() => {
     axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_APIKEY}&query=${recipeType}&number=22`)
@@ -22,17 +21,18 @@ function Food() {
     setRecipeType(type);
   }
 
-  const handleSaveRecipe = (recipe) => {
-    axios.post(`http://localhost:3002/food`, {
-      user_email: user.email,
-      food_title: recipe.title,
-      food_image: recipe.image
-    }).then(response => {
-      console.log(response.data); // do something with response data
-    }).catch(error => {
-      console.log(error);
-    });
-  }
+  const [clickedItem,setClickedItem]=useState({})
+
+
+  const [showFlag, setShowFlag] = useState(false);
+    function modalExpose(recipe) {
+        setShowFlag(true);
+        setClickedItem(recipe);
+    }
+    const handleClose = () => {
+        setShowFlag(false);
+    };
+
 
   return (
     <div className="container" >
@@ -49,7 +49,8 @@ function Food() {
               <img src={recipe.image} className="card-img-top" alt={recipe.title} />
               <div className="card-body">
                 <h5 style={{ fontFamily: "Georgia" }} className="card-title">{recipe.title}</h5>
-                <button type="button" style={{ fontFamily: "Georgia" }} className="btn btn-primary" onClick={() => handleSaveRecipe(recipe)}>Add to your Event</button> {/* Apply the "btn-primary" class */}
+                <button type="button" style={{ fontFamily: "Georgia" }} className="btn btn-primary" onClick={() => modalExpose(recipe)}>Add to your Event</button> {/* Apply the "btn-primary" class */}
+             <FoodModal showFlag={showFlag} handleClose={handleClose} item={clickedItem} />
               </div>
             </div>
           </div>

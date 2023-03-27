@@ -77,7 +77,7 @@ export default function YourEvent() {
                       {`${element.date}`}
                   </Card.Text>
                   <Button variant="danger" style={{width:'50%'}} onClick={() => { handleDelete(element) }}>Delete</Button>
-                  <Button variant="success" style={{width:'50%'}} onClick={() => { handleShow(element) }}>Update</Button>
+                  <Button variant="success" style={{width:'50%'}} onClick={() => { handleShow(element) }}>Details</Button>
                   <YouEventModal showFlag={showFlag} clickedEvent={clickedEvent} handleclose={handleclose}/>
               </Card.Body>
           </Card>

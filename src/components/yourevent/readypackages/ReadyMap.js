@@ -2,6 +2,7 @@ import Row from 'react-bootstrap/Row';
 
 
 import Container from 'react-bootstrap/Container';
+import ReadyCard from './ReadyCard';
 
 export default function ReadyMap (props){
 
@@ -16,7 +17,7 @@ export default function ReadyMap (props){
             {  props.fetchRes.map((element)=>{
                   return(
                     
-            <MusicEv setDELETEDArr={setDELETEDArr} key={element.track_url} packageEvent={element} />
+            <ReadyCard setDELETEDArr={setDELETEDArr} clickedEvent={props.clickedEvent} key={element.track_url} packageEvent={element} />
          
             )
               })}

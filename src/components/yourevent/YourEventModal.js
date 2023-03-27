@@ -26,7 +26,7 @@ export default function YouEventModal(props) {
             <GiftsYourEvent clickedEvent={props.clickedEvent}/>
             <h3>Your Event Music</h3>
 
-            {/* <MusicYourEvent clickedEvent={props.clickedEvent}/> */}
+            <MusicYourEvent clickedEvent={props.clickedEvent}/>
             <h3>Your Event Ready Package</h3>
             <Ready clickedEvent={props.clickedEvent}/>
             <Modal.Footer>

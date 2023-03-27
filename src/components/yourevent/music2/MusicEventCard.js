@@ -3,12 +3,12 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 
 
-import { useState } from 'react';
+
 import React from 'react'
 
 
 export default function MusicEventCard(props) {
-    const userEmail = localStorage.getItem('user_email')
+  
     const handleDelete = async () => {
        
         const requestOptions = {
@@ -16,7 +16,7 @@ export default function MusicEventCard(props) {
            
         };
         
-        const res = await fetch(`${process.env.REACT_APP_serverURL}Music/${props.musicEvent.id}?val=${userEmail}`, requestOptions);
+        const res = await fetch(`${process.env.REACT_APP_serverURL}Music/${props.clickedEvent.eventid}?id=${props.musicEvent.id}`, requestOptions);
         const Data = await res.json();
        
         props.setDELETEDArr(Data)
@@ -43,7 +43,7 @@ export default function MusicEventCard(props) {
                         <Card.Text style={{ color: 'black' }} >
                             {`Artist Name : ${props.musicEvent.aritst_name}`}
                         </Card.Text>
-                        <Button variant="danger" style={{width:'50%'}} onClick={() => { handleDelete(props.musicEvent) }}>Delete</Button>
+                        <Button variant="danger" style={{width:'50%'}} onClick={() => { handleDelete() }}>Delete</Button>
                     </Card.Body>
                 </Card>
             </Col>
