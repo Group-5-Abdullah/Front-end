@@ -1,0 +1,27 @@
+#Footer{
+  background-color: rgb(255, 255, 255);
+}
+#Footer {
+  font-family: "Georgia", Arial, sans-serif;
+}
+#Footer 
+{
+      
+background-color: #ffffff;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-content: center;
+      justify-content: center;
+      justify-content: space-between;
+     
+    }
+    
+#Footer p {
+      margin: 0;
+     font-style: italic;
+     color: rgb(0, 0, 0);
+    }
+  

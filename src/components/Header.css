@@ -1,0 +1,20 @@
+.active-link {
+  font-weight: bolder ;
+  color: rgb(0, 0, 0);
+}
+
+.navbar .nav-link:hover {
+  color: #fff;
+  font-weight: bolder;
+}
+
+.auth-link {
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+}
+
+.auth-link:hover {
+  color: #fff;
+  font-weight: bolder;
+}

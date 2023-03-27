@@ -1,24 +1,34 @@
-import { React } from "react"; 
+
+import React from "react";
 import { Link } from "react-router-dom";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import './Header.css'; 
+import { useAuth0 } from "@auth0/auth0-react";
 
+export default function Header() {
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
-export default function Header (){
-    return (
-        <div>
-             <Navbar bg="dark" variant="dark">
-        <Container style={{display:"flex"}}>
-          <Navbar.Text >Celebrate Pro</Navbar.Text>
-          <Nav  className="me-auto" style={{display:"flex"}}>
-            <Link to='/home' >Home</Link>
-            <Link to='/yourevent' >Your Event</Link>
-            <Link to ="/readypackages">Get Your Ready Package!</Link>
-            <Link to='/aboutus' >About Us</Link>
+  return (
+    <Navbar bg="bisque" expand="lg">
+      <Container>
+        <Navbar.Brand style={{ fontSize: "45px", fontFamily: "Georgia" , fontweight: "bolder" }}>Celebrate Pro</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbar-nav" />
+        <Navbar.Collapse id="navbar-nav">
+          <Nav style={{ fontFamily: "Georgia" , fontweight: "bolder" , color: "rgb(0, 0, 0);" }} className="ms-auto">
+            <Nav.Link as={Link} to="/home" activeClassName="active-link">Home</Nav.Link>
+            <Nav.Link as={Link} to="/yourevent" activeClassName="active-link">My Event</Nav.Link>
+            <Nav.Link as={Link} to="/readypackages" activeClassName="active-link">Our designs</Nav.Link>
+            <Nav.Link as={Link} to="/aboutus" activeClassName="active-link">About Us</Nav.Link>
+            <Nav.Link  style={{ fontFamily: "Georgia" }} >
+              {isAuthenticated ? (
+                <span onClick={() => logout()} className="auth-link">Logout</span>
+              ) : (
+                <span onClick={() => loginWithRedirect()} className="auth-link">Login</span>
+              )}
+            </Nav.Link>
           </Nav>
-        </Container>
-      </Navbar>
-        </div>
-    )
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
