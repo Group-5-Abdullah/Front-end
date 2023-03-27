@@ -1,7 +1,7 @@
 
 import FlowerYourEvent from "./flower/FlowerYourEvent";
 import FoodYourEvent from "./food/FoodYourEvent";
-import Form from './form/Form2'
+import Event from './form/Event'
 import GiftsYourEvent from "./gifts/GiftsYourEvent";
 import MusicYourEvent from "./music2/MusicYourEvent";
 import Button from 'react-bootstrap/Button';
@@ -14,17 +14,17 @@ export default function YouEventModal(props) {
         <Modal show={props.showFlag} onHide={props.handleclose}>
             <Modal.Header style={{ backgroundColor: 'gray' }} closeButton>Your Event Information !</Modal.Header>
             <h3>Form</h3>
-            <Form clickedEvent={props.clickedEvent}/>
-            {/* <h3>Your Event Flowers</h3> */}
+            <Event clickedEvent={props.clickedEvent}/>
 
-            <FlowerYourEvent clickedEvent={props.clickedEvent}/>
             <h3>Your Event Flowers</h3>
+            <FlowerYourEvent clickedEvent={props.clickedEvent}/>
 
-            <FoodYourEvent clickedEvent={props.clickedEvent}/>
             <h3>Your Event Food</h3>
+            <FoodYourEvent clickedEvent={props.clickedEvent}/>
 
-            <GiftsYourEvent clickedEvent={props.clickedEvent}/>
             <h3>Your Event Gifts</h3>
+            <GiftsYourEvent clickedEvent={props.clickedEvent}/>
+            <h3>Your Event Music</h3>
 
             {/* <MusicYourEvent clickedEvent={props.clickedEvent}/> */}
             <h3>Your Event Ready Package</h3>

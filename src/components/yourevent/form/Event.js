@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
 // import YouEventModal from './YourEventModal';
 
-export default function Event(){
+export default function Event(props){
       
 
        
