@@ -13,7 +13,7 @@ export default function Music() {
     useEffect(() => {
 
         sendReq();
-    }, [setMusicArr])
+    }, [])
 
     return (
         <div style={{ backgroundColor: '#4e3c3c' }}>

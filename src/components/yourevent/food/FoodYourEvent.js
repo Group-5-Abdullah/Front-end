@@ -7,14 +7,14 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 // import axios from 'axios';
 
-function useForceUpdate() {
-    const [value, setValue] = useState(0);
-    return () => setValue(value => value + 1)
-}
+// function useForceUpdate() {
+//     const [value, setValue] = useState(0);
+//     return () => setValue(value => value + 1)
+// }
 export default function FoodYourEvent(props) {
     
     const [foodArray, setFoodArray] = useState([]);
-    const forceUpdate = useForceUpdate();
+    // const forceUpdate = useForceUpdate();
     const serverURL = `${process.env.REACT_APP_serverURL}food?eventid=${props.clickedEvent.eventid}`;
     
     console.log(serverURL)
@@ -34,9 +34,8 @@ export default function FoodYourEvent(props) {
 
 // .....      delete food   .......................................................
        const deleteFood = (id) => {
-        console.log(id);
-        const deleteURL = `${process.env.REACT_APP_serverURL}food?id=${id}&eventid=${props.clickedEvent.eventid}` //&eventid=${props.clickedEvent.eventid}&user_email=${localStorage.getItem('user_email')}`
-        // const deleteURL = `${process.env.REACT_APP_serverURL}food?eventid=${id}&user_email=${localStorage.getItem('user_email')}`
+        
+        const deleteURL = `${process.env.REACT_APP_serverURL}food?id=${id}&eventid=${props.clickedEvent.eventid}` 
         fetch(deleteURL, { method: 'DELETE' })
             .then((res) => {
                 res.json()
@@ -54,7 +53,7 @@ export default function FoodYourEvent(props) {
 
 useEffect(() => {
     fetchData();
-    forceUpdate()
+    // forceUpdate()
 }, [])
 
 console.log(foodArray)
