@@ -6,8 +6,8 @@ function LogoutButton() {
     if(!isAuthenticated){
         localStorage.removeItem('user_email')
     }
-    return (
-        <button onClick={()=> logout({ returnTo: window.location.origin})}>Log out</button>
+    return (<></>
+        // <button onClick={()=> logout({ returnTo: window.location.origin})}>Log out</button>
     )
 };
 

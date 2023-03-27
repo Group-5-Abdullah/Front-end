@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 
-import ChooseModal from '../ChooseModal';
+import ChooseModal from './ChooseModal';
 
 
 

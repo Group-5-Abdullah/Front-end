@@ -2,14 +2,17 @@ import { useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-
+import './FormComp.css';
+// import Table from 'react-bootstrap/Table';
+// import UserEvent from '../yourevent/form/UserEvent'
 
 
 export default function FormComp() {
 
     const [showForm, setShowForm] = useState(false)
     const [user_email, setUserEmail] = useState('')
-
+    // const [dataArray, setDataArray] = useState([])
+    // const [isLoading, setIsLoading] = useState(false);
 
     
     const addToDBURL = `${process.env.REACT_APP_serverURL}events`;
@@ -68,27 +71,29 @@ export default function FormComp() {
 
 return (
     <div >
-        <h3>start yor event by creating new one !</h3>
-        <Button variant="primary" onClick={eventForm}>create your event</Button>
+        <div id='welcomeingCard' style={{ fontFamily: "Georgia" }} >
+        <h3 >Create your supplies for your event </h3>
+        <Button variant="primary" onClick={eventForm}>start</Button>
+        </div>
         {/*  ........        form part    ................................................................. */}
         <Modal show={showForm} onHide={eventForm} >
             <Modal.Header closeButton>
-                <Modal.Title>start you'r event</Modal.Title>
+                <Modal.Title>Create you'r event</Modal.Title>
             </Modal.Header>
 
             <Form onSubmit={saveToDB}>
 
                 <Form.Group className="mb-3" >
-                    <Form.Label> your event</Form.Label>
+                    <Form.Label>Event title</Form.Label>
                     <Form.Control type="text" name="event" />
 
-                    <Form.Label> event location</Form.Label>
+                    <Form.Label>Event location</Form.Label>
                     <Form.Control type="text" name="location" />
 
-                    <Form.Label> event date</Form.Label>
+                    <Form.Label>Event date</Form.Label>
                     <Form.Control type="text" name="date" />
 
-                    <Form.Label> description</Form.Label>
+                    <Form.Label>Description</Form.Label>
                     <Form.Control type="text" name="description" />
 
                 </Form.Group>
@@ -113,6 +118,5 @@ return (
     </div >
 )
 }
-
 
 
