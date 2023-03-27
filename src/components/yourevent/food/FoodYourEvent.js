@@ -5,12 +5,8 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-// import axios from 'axios';
 
-// function useForceUpdate() {
-//     const [value, setValue] = useState(0);
-//     return () => setValue(value => value + 1)
-// }
+
 export default function FoodYourEvent(props) {
     
     const [foodArray, setFoodArray] = useState([]);
