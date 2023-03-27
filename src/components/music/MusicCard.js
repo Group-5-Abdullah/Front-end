@@ -1,34 +1,23 @@
-import Button from 'react-bootstrap/Button';
+import { useState,useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-
+import Button from "react-bootstrap/Button";
 import React from 'react'
 
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
+import MusicModal from './MusicModal';
 
 export default function MusicCard(props) {
 
-    const { user } = useAuth0();
-
-    const dataToSend = {
-        user_email: user.email,
-        track_name: props.music.track_name,
-        track_url: props.music.track_url,
-        aritst_name: props.music.aritst_name
+  
+    
+    const [showFlag,setShowFlag]=useState(false);
+    function modalExpose(){
+        setShowFlag(true);
     }
-    const fetchRes = async () => {
-        await fetch(`${process.env.REACT_APP_serverURL}Music`, {
-
-            method: 'POST',
-            body: JSON.stringify(
-
-                dataToSend
-            ),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-    }
+    const handleClose = () => {
+        setShowFlag(false);
+      };
 
     const style1 = { backgroundColor: '#0dcaf0bd' };
     const style2 = { width: '18rem' };
@@ -53,7 +42,8 @@ export default function MusicCard(props) {
                         <Card.Text style={{ color: 'black' }} >
                             {`Artist Name : ${props.music.aritst_name}`}
                         </Card.Text>
-                        <Button variant="light" onClick={() => { fetchRes(); }}>add to your event</Button>
+                        <Button variant="light" onClick={() => { modalExpose(); }}>add to your event</Button>
+                        <MusicModal showFlag={showFlag} handleClose={handleClose} music={props.music} />
                     </Card.Body>
                 </Card>
             </Col>

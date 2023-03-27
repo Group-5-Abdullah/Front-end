@@ -1,7 +1,7 @@
 
 import FlowerYourEvent from "./flower/FlowerYourEvent";
 import FoodYourEvent from "./food/FoodYourEvent";
-import Form from './form/Event'
+import Form from './form/Form2'
 import GiftsYourEvent from "./gifts/GiftsYourEvent";
 import MusicYourEvent from "./music2/MusicYourEvent";
 import Button from 'react-bootstrap/Button';

@@ -1,42 +1,26 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-
+import { useState } from 'react';
 import React from 'react'
+import ReadyModal from './ReadyModal';
 
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
 
 export default function PackagesCard(props) {
+
+    
+    
+    const [showFlag,setShowFlag]=useState(false);
+    function modalExpose(){
+        setShowFlag(true);
+    }
+    const handleClose = () => {
+        setShowFlag(false);
+      };
  
-    const { user } = useAuth0();
+    // const { user } = useAuth0();
 
-    const dataToSend = {
-        user_email: user.email,
-        gift_title: props.package.gift_title,
-        gift_image: props.package.gift_image,
-        gift_price: props.package.gift_price,
-        flower_image: props.package.flower_image,
-        flower_name: props.package.flower_name,
-        track_name: props.package.track_name,
-        track_url: props.package.track_url,
-        artist_name: props.package.artist_name,
-        food_title: props.package.food_title,
-        food_image: props.package.food_image
-
-    }
-    const fetchRes = async () => {
-        await fetch(`${process.env.REACT_APP_serverURL}readyPackeges`, {
-
-            method: 'POST',
-            body: JSON.stringify(
-
-                dataToSend
-            ),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-    }
 
     const style1 = { backgroundColor: '#0dcaf0bd' };
     const style2 = { width: '18rem' };
@@ -72,9 +56,10 @@ export default function PackagesCard(props) {
                                     {`Artist Name : ${props.package.artist_name}`}
                                 </Card.Text>
                         <Button variant="light" onClick={() => { 
-                            fetchRes();
-                            alert('Added To Your Event ;)');
+                            modalExpose();
+                            
                              }}>add to your event</Button>
+                             <ReadyModal showFlag={showFlag} handleClose={handleClose} Ready={props.package}/>
                     </Card.Body>
                 </Card>
             </Col>
