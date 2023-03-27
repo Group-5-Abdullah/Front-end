@@ -15,18 +15,22 @@ export default function YouEventModal(props) {
             <Modal.Header style={{ backgroundColor: 'gray' }} closeButton>Your Event Information !</Modal.Header>
             <h3>Form</h3>
             <Event clickedEvent={props.clickedEvent}/>
+
             {/* <h3>Your Event Flowers</h3> */}
 
-            <FlowerYourEvent clickedEvent={props.clickedEvent}/>
+
+
             <h3>Your Event Flowers</h3>
+            <FlowerYourEvent clickedEvent={props.clickedEvent}/>
 
-            <FoodYourEvent clickedEvent={props.clickedEvent}/>
             <h3>Your Event Food</h3>
+            <FoodYourEvent clickedEvent={props.clickedEvent}/>
 
-            <GiftsYourEvent clickedEvent={props.clickedEvent}/>
             <h3>Your Event Gifts</h3>
+            <GiftsYourEvent clickedEvent={props.clickedEvent}/>
+            <h3>Your Event Music</h3>
 
-            {/* <MusicYourEvent clickedEvent={props.clickedEvent}/> */}
+            <MusicYourEvent clickedEvent={props.clickedEvent}/>
             <h3>Your Event Ready Package</h3>
             <Ready clickedEvent={props.clickedEvent}/>
             <Modal.Footer>

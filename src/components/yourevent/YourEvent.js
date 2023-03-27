@@ -19,7 +19,6 @@ export default function YourEvent() {
     const serverUrl = `${process.env.REACT_APP_serverURL}events/${userEmail}`;
     console.log(serverUrl);
     const sendReq = async () => {
-        // const serverUrl = `${process.env.REACT_APP_serverURL}events/${userEmail}`;
         
         const result = await fetch(serverUrl);
         const data = await result.json();
@@ -46,10 +45,8 @@ export default function YourEvent() {
         };
         
         const res = await fetch(`${process.env.REACT_APP_serverURL}events/${element.eventid}`, requestOptions);
-        console.log(element.eventid)
         const Data = await res.json();
        
-        // props.setDELETEDArr(Data)
     }
     const handleclose = () => {
         setShowFlag(false);
@@ -64,7 +61,6 @@ export default function YourEvent() {
           {  eventArr.map((element)=>{
                 return(
                   
-        //   <MusicEventCard  key={element.eventid} Event={element} />
           <Col key={element.eventid} >
           <Card border="danger" style={{ ...style1, ...style2 }} >
 
@@ -81,7 +77,7 @@ export default function YourEvent() {
                       {`${element.date}`}
                   </Card.Text>
                   <Button variant="danger" style={{width:'50%'}} onClick={() => { handleDelete(element) }}>Delete</Button>
-                  <Button variant="success" style={{width:'50%'}} onClick={() => { handleShow(element) }}>Update</Button>
+                  <Button variant="success" style={{width:'50%'}} onClick={() => { handleShow(element) }}>Details</Button>
                   <YouEventModal showFlag={showFlag} clickedEvent={clickedEvent} handleclose={handleclose}/>
               </Card.Body>
           </Card>
