@@ -15,20 +15,12 @@ function GiftModal(props){
           user_email: user_email,
           eventid:props.eventid
         };
-        // const obje={
-        //   user_email:e.target.user_email.value
-        // };
-        // if (props.item.gift_title === "favList" ) {
-        //   const serverURL = `https://movies-library-production-1603.up.railway.app/UPDATE/${props.item.id}`;
-        //   axios.put(serverURL, obje).then(() => {
-        //     props.handleClose();
-        //   });
-        // } else {
+        
           const serverURL = `${process.env.REACT_APP_serverURL}gift`;
           axios.post(serverURL, obj).then(() => {
             props.handleClose();
           });
-        // }
+       
       };
     return(
         <Modal
@@ -63,17 +55,7 @@ function GiftModal(props){
             readOnly
           />
         </Form.Group>
-        {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>
-            <b>overview</b>
-          </Form.Label>
-          <Form.Control
-            name="overview"
-            type="text"
-            value={props.item.overview}
-            readOnly
-          />
-        </Form.Group> */}
+      
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>
             <b>quentity</b>
