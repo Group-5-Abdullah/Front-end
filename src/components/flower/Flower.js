@@ -10,7 +10,7 @@ import FlowerModal from './FlowerModal';
 function Flower() {
     const [flowersArr, setflowersArr] = useState([]);
 
-
+    const [clickedItem,setClickedItem]=useState({})
 
     const SendReq = async () => {
         const serverURL = `${process.env.REACT_APP_serverURL}flowerslist`
@@ -27,8 +27,9 @@ function Flower() {
 
 
     const [showFlag, setShowFlag] = useState(false);
-    function modalExpose() {
+    function modalExpose(item) {
         setShowFlag(true);
+        setClickedItem(item);
     }
     const handleClose = () => {
         setShowFlag(false);
@@ -51,7 +52,7 @@ function Flower() {
                                     modalExpose(item);
                                 }}>
                                     add to my event </Button>
-                                <FlowerModal showFlag={showFlag} handleClose={handleClose} item={item} />
+                                <FlowerModal showFlag={showFlag} handleClose={handleClose} item={clickedItem} />
                             </Card>
                         </Col>)
                 })}
