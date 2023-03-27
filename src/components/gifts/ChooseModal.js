@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import GiftModal from "./gifts/GiftModal";
+import GiftModal from "./GiftModal";
 function ChooseModal(props) {
     const [showFlag,setShowFlag]=useState(false);
     function modalExpose(){

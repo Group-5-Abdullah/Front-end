@@ -1,10 +1,10 @@
-import { useState,useEffect } from 'react';
+import { useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Button from "react-bootstrap/Button";
 import React from 'react'
 
-// import { useAuth0 } from "@auth0/auth0-react";
+
 import MusicModal from './MusicModal';
 
 export default function MusicCard(props) {

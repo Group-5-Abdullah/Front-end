@@ -23,17 +23,7 @@ export default function FoodModal(props) {
     }, [])
 
 
-  // const handleSaveRecipe = (recipe) => {
-  //   axios.post(`http://localhost:3002/food`, {
-  //     user_email: user.email,
-  //     food_title: recipe.title,
-  //     food_image: recipe.image
-  //   }).then(response => {
-  //     console.log(response.data); // do something with response data
-  //   }).catch(error => {
-  //     console.log(error);
-  //   });
-  // }
+  
 
     const fetchRes = async (item) => {
         await fetch(`${process.env.REACT_APP_serverURL}food`, {

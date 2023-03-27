@@ -5,7 +5,7 @@ import { useState } from 'react';
 import React from 'react'
 import ReadyModal from './ReadyModal';
 
-// import { useAuth0 } from "@auth0/auth0-react";
+
 
 export default function PackagesCard(props) {
 
@@ -19,7 +19,7 @@ export default function PackagesCard(props) {
         setShowFlag(false);
       };
  
-    // const { user } = useAuth0();
+
 
 
     const style1 = { backgroundColor: '#0dcaf0bd' };

@@ -4,13 +4,13 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import axios from 'axios';
+
 import FlowerModal from './FlowerModal';
 
 function Flower() {
     const [flowersArr, setflowersArr] = useState([]);
 
-    const user_email = localStorage.getItem('user_email')
+
 
     const SendReq = async () => {
         const serverURL = `${process.env.REACT_APP_serverURL}flowerslist`

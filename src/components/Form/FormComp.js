@@ -2,16 +2,14 @@ import { useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-// import Table from 'react-bootstrap/Table';
-// import UserEvent from '../yourevent/form/UserEvent'
+
 
 
 export default function FormComp() {
 
     const [showForm, setShowForm] = useState(false)
     const [user_email, setUserEmail] = useState('')
-    // const [dataArray, setDataArray] = useState([])
-    // const [isLoading, setIsLoading] = useState(false);
+
 
     
     const addToDBURL = `${process.env.REACT_APP_serverURL}events`;
