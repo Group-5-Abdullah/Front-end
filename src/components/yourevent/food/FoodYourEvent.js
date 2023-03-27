@@ -1,4 +1,4 @@
-export default function FoodYourEvent (){
+export default function FoodYourEvent (props){
     return (
         <div>
             
