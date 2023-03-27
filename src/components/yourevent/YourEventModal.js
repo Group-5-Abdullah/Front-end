@@ -16,6 +16,10 @@ export default function YouEventModal(props) {
             <h3>Form</h3>
             <Event clickedEvent={props.clickedEvent}/>
 
+            {/* <h3>Your Event Flowers</h3> */}
+
+
+
             <h3>Your Event Flowers</h3>
             <FlowerYourEvent clickedEvent={props.clickedEvent}/>
 
