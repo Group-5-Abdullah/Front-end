@@ -26,9 +26,9 @@ export default function MusicCard(props) {
 
         <div className="container" style={{ fontFamily: "Georgia"  }}  >
             <div className="overlayMusic">
-                <div className="row row-cols-1 row-cols-md-4 g-4 mt-4"></div>
+    
                 <div className="col" key={props.music.id}>
-                <div className="card border-secondary food-card">
+                <div className="card border-secondary Music-card">
                     <Card.Img className="card-img-top" height={'250px'} variant="top" src={`https://img.freepik.com/free-vector/elegant-musical-notes-music-chord-background_1017-20759.jpg`} />
                     <Card.Header >{`Song Title : ${props.music.track_name}`}</Card.Header>
                     <Card.Text >

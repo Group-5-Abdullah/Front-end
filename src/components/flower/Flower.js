@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-// import Card from 'react-bootstrap/Card';
-// import Col from 'react-bootstrap/Col';
-// import Row from 'react-bootstrap/Row';
-// import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+
 import FlowerModal from './FlowerModal';
-import './Flower.css';
 
 function Flower() {
     const [flowersArr, setflowersArr] = useState([]);
@@ -39,30 +39,27 @@ function Flower() {
 
 
     return (
+        <div className="container" style={{ fontFamily: "Georgia" ,  backgroundColor: 'rgba(255, 255, 255, 0.471)'  }}  >
+            <div className="overlayFlower">
+            <Row xs={1} md={4} className="g-4">  
+                {flowersArr.map((item) => {
+                    return (
+                        <div className="Col" key={item.name} >
+                            <div className="card border-secondary flower-card"></div>
+                            <Card style={{ width: '18rem', backgroundColor: 'gray' }}>
+                                <Card.Img className="card-img-top" height={'250px'} variant="top" src={`${item.photo}`} />
+                                <Card.Header>{item.name}</Card.Header>
+                                <Button className="btn btn-primary"  onClick={() => {
 
-        <div className="container" >
-            <div className="overlayflower">
-                <div className="row row-cols-1 row-cols-md-4 g-4 mt-4">
-                    {flowersArr.map((item) => {
-                        return (
-                            <div className="col" key={item.name} >
-
-                                <div className="card border-secondary flower-card"></div>
-                                <img  src={`${item.photo}`} className="card-img-top" alt ={item.name}/>
-                                <div className="card-body">
-                                    <h5 style={{ fontFamily: "Georgia" }} className="card-title">{item.name}</h5>
-
-                                    <button type="button"  style={{ fontFamily: "Georgia" }} className="btn btn-primary" onClick={() => {
-                                        modalExpose(item);
-                                    }}>
-                                        Add to your Event </button>
-                                    <FlowerModal showFlag={showFlag} handleClose={handleClose} item={clickedItem} />
-
-                                </div> </div>)
-                    })}
-                </div>
-            </div>
-        </div >
+                                    modalExpose(item);
+                                }}>
+                                    Add to your Event </Button>
+                                <FlowerModal showFlag={showFlag} handleClose={handleClose} item={clickedItem} />
+                            </Card>
+                        </div>)
+                })}
+            </Row></div>
+        </div>
 
     )
 }

@@ -47,7 +47,7 @@ function Food() {
         {recipes.map(recipe => (
           <div className="col" key={recipe.id}>
             <div className="card border-secondary food-card"> {/* Add the "food-card" class */}
-              <img src={recipe.image} className="card-img-top" alt={recipe.title} />
+              <img src={recipe.image} className="card-img-top" height={'250px'} alt={recipe.title} />
               <div className="card-body">
                 <h5 style={{ fontFamily: "Georgia" }} className="card-title">{recipe.title}</h5>
                 <button type="button" style={{ fontFamily: "Georgia" }} className="btn btn-primary" onClick={() => modalExpose(recipe)}>Add to your Event</button> {/* Apply the "btn-primary" class */}

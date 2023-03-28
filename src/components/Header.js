@@ -55,11 +55,11 @@ export default function Header() {
         <Navbar.Brand style={{ fontSize: "45px", fontFamily: "Georgia", fontWeight: "bolder" }}>Celebrate Pro</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
-          <Nav style={{ fontFamily: "Georgia", fontWeight: "bolder", color: "rgb(0, 0, 0)" }} className="ms-auto">
-            <Nav.Link as={Link} to="/home" activeClassName="active-link">Home</Nav.Link>
-            <Nav.Link as={Link} to="/yourevent" activeClassName="active-link">My Event</Nav.Link>
-            <Nav.Link as={Link} to="/readypackages" activeClassName="active-link">Our designs</Nav.Link>
-            <Nav.Link as={Link} to="/aboutus" activeClassName="active-link">About Us</Nav.Link>
+          <Nav style={{ fontFamily: "Georgia", fontWeight: "bolder", color: "rgb(0 0 0)" }} className="ms-auto">
+            <Nav.Link as={Link} to="/home" activeclassname="active-link">Home</Nav.Link>
+            <Nav.Link as={Link} to="/yourevent" activeclassname="active-link">My Event</Nav.Link>
+            <Nav.Link as={Link} to="/readypackages" activeclassname="active-link">Our designs</Nav.Link>
+            <Nav.Link as={Link} to="/aboutus" activeclassname="active-link">About Us</Nav.Link>
             <Nav.Link id="" style={{ fontFamily: "Georgia" }}>
               
               {isAuthenticated && user ? (
