@@ -13,19 +13,26 @@ import { Nav, Navbar } from 'react-bootstrap';
 import './Home.css' ;
 import AboutUs from './AboutUs/AboutUs';
 import HomeContent from './HomeContent';
-
+import HomePage from './HomePage';
+import YouEventModal from './yourevent/YourEventModal';
+import { useState } from 'react';
 
 function Home() {
+    const [clickedEvent, setClickedEvent] = useState({});
+    const passedEvent = (Arr) => {
+        setClickedEvent(Arr)
+        console.log("parent");
+     }
 
     return (<>
-        <Header />
+        {/* <Header /> */}
         <div>
-            
-            <FormComp/>
+{/* <HomePage/> */}
+            {/* <FormComp/>
             <Navbar bg="light" expand="lg">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav style={{ fontFamily: "Georgia" }} className="mr-auto">
+                    <Nav style={{ fontFamily: "Georgia" }} className="flex-column" >
                         <Link className="nav-link" to="/music">Music</Link>
                         <Link className="nav-link" to="/flower">Flower</Link>
                         <Link className="nav-link" to="/food">Food</Link>
@@ -33,19 +40,25 @@ function Home() {
                         <Link className="nav-link" to="/readypackages">Our designs</Link>
                     </Nav>
                 </Navbar.Collapse>
-            </Navbar>
-            <HomeContent/>
+            </Navbar> */}
+            
             <Routes>
+            <Route path='/' element={<HomePage />}></Route>
+
+            
+                <Route path='/Details' element={<YouEventModal clickedEvent = {clickedEvent} />}></Route>
+                
 
                 <Route path='/music' element={<Music />}></Route>
                 <Route path='/flower' element={<Flower />}></Route>
                 <Route path='/food' element={<Food />}></Route>
                 <Route path='/gift' element={<Gifts />}></Route>
                 <Route path='/readypackages' element={<ReadyPackages />}></Route>
-                <Route path='/yourevent' element={<YourEvent />}></Route>
+                <Route path='/yourevent' element={<YourEvent passedEvent = {passedEvent} />}></Route>
                 <Route path='/aboutus' element={<AboutUs/>}></Route>
             </Routes>
-            <Footer />
+            {/* <HomeContent/> */}
+            {/* <Footer /> */}
         </div>
     </>
     )

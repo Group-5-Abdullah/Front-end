@@ -1,16 +1,31 @@
-import { useState } from 'react';
+import { useState ,useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Button from "react-bootstrap/Button";
 import React from 'react'
 import './Music.css';
-
+import { useAuth0 } from '@auth0/auth0-react';
+import axios from 'axios';
 
 import MusicModal from './MusicModal';
 
 export default function MusicCard(props) {
 
-
+    const [chooseArr, setChooseArr] = useState([]);
+    const user_email = localStorage.getItem("user_email");
+    const serverUrl = `${process.env.REACT_APP_serverURL}events/${user_email}`;
+    const getReq = () => {
+      axios.get(serverUrl).then((resp) => {
+        setChooseArr(resp.data);
+      });
+    };
+    useEffect(() => {
+      getReq();
+    }, [chooseArr]);
+    const { isAuthenticated, loginWithRedirect,user } = useAuth0();
+    if (isAuthenticated) {
+      localStorage.setItem("user_email", user.email);
+    }
 
     const [showFlag, setShowFlag] = useState(false);
     function modalExpose() {
@@ -37,7 +52,15 @@ export default function MusicCard(props) {
                     <Card.Text >
                         {`Artist Name : ${props.music.aritst_name}`}
                     </Card.Text>
-                    <Button className="btn btn-primary"  onClick={() => { modalExpose(); }}>Add to your Event</Button>
+                    <Button className="btn btn-primary"  onClick={() => {
+                      if (isAuthenticated&& chooseArr.length) {
+                        modalExpose();
+                    } else if (isAuthenticated&&!chooseArr.length) {
+                        alert("Add your event first!!!")
+                    } else if (!isAuthenticated) {
+                        loginWithRedirect()
+                      }
+                    }}>Add to your Event</Button>
                     <MusicModal showFlag={showFlag} handleClose={handleClose} music={props.music} />
         
                 </div>

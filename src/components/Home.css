@@ -1,4 +1,6 @@
 .mr-auto .nav-link:hover {
     color: black;
   }
-  
+  .flex-column {   position: fixed;   top: 0;   left: 0;   height: 100%;   width: 200px;   background-color: #f1f1f186;   padding: 20px; }  
+  .flex-column a {   display: block;   margin-bottom: 10px;   color: #333;   text-decoration: none; }  
+  .flex-column a:hover {   color: #fff;   background-color: #333; }

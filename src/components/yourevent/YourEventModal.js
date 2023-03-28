@@ -7,19 +7,19 @@ import MusicYourEvent from "./music2/MusicYourEvent";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Ready from "./readypackages/Ready";
+import { Card } from "react-bootstrap";
 
 
 export default function YouEventModal(props) {
     return (
-        <Modal
-        dialogClassName="modal-90w"
-        aria-labelledby="example-custom-modal-styling-title"
-        show={props.showFlag} onHide={props.handleclose}>
-            <Modal.Header style={{ backgroundColor: 'gray' }} closeButton>Your Event Information !</Modal.Header>
+        <div>
+        
+     
+            <header style={{ backgroundColor: 'gray' }} closeButton>Your Event Information !</header>
             <h3>Form</h3>
             <Event clickedEvent={props.clickedEvent}/>
 
-            {/* <h3>Your Event Flowers</h3> */}
+   
 
 
 
@@ -36,12 +36,8 @@ export default function YouEventModal(props) {
             <MusicYourEvent clickedEvent={props.clickedEvent}/>
             <h3>Your Event Ready Package</h3>
             <Ready clickedEvent={props.clickedEvent}/>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={props.handleclose}>
-                    Close
-                </Button>
-                
-            </Modal.Footer>
-        </Modal>
+            
+       
+        </div>
     )
 }
