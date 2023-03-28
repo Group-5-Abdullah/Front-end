@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import { useState, useEffect } from 'react';
 import axios from "axios";
 
-
+ 
 
 export default function FoodModal(props) {
 
@@ -20,10 +20,10 @@ export default function FoodModal(props) {
     }
     useEffect(() => {
         getReq();
-    }, [])
+    }, [chooseArr])
 
 
-  
+
 
     const fetchRes = async (item) => {
         await fetch(`${process.env.REACT_APP_serverURL}food`, {
@@ -58,24 +58,15 @@ export default function FoodModal(props) {
                     {chooseArr.map((item) => {
                         return (
                             <Col key={item.eventid}>
-                                <Card>
-                                    <Card.Title>{item.event}</Card.Title>
-                                    <Card.Body>
-                                        <p>
-                                            <b>descreption:</b>
-                                            {item.description}
-                                        </p>
-                                    </Card.Body>
-                                    <Card.Footer>
-                                        <Button variant="primary" onClick={() => {
-                                            fetchRes(item);
-                                            props.handleClose();
-                                        }}>
-                                            Submit
-                                        </Button>
-
-                                    </Card.Footer>
-                                </Card>
+                                <Button variant="primary" onClick={() => {fetchRes(item);props.handleClose();}}> 
+                                {item.event}
+                                    <Card >
+                                    </Card>
+                                    {item.date}
+                                    <Card >
+                                    </Card>
+                                    {item.description}
+                                </Button>
                             </Col>
                         );
                     })}

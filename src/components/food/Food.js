@@ -2,8 +2,26 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Food.css';
 import FoodModal from './FoodModal';
-
+import { useAuth0 } from '@auth0/auth0-react';
+import { Button } from 'react-bootstrap';
 function Food() {
+
+  const [chooseArr, setChooseArr] = useState([]);
+  const user_email = localStorage.getItem("user_email");
+  const serverUrl = `${process.env.REACT_APP_serverURL}events/${user_email}`;
+  const getReq = () => {
+    axios.get(serverUrl).then((resp) => {
+      setChooseArr(resp.data);
+    });
+  };
+  useEffect(() => {
+    getReq();
+  }, [chooseArr]);
+  const { isAuthenticated, loginWithRedirect,user } = useAuth0();
+  if (isAuthenticated) {
+    localStorage.setItem("user_email", user.email);
+  }
+
   const [recipes, setRecipes] = useState([]);
   const [recipeType, setRecipeType] = useState('main course');
 
@@ -12,9 +30,7 @@ function Food() {
       .then(response => {
         setRecipes(response.data.results);
       })
-      .catch(error => {
-        // console.log(error);
-      });
+      
   }, [recipeType]);
 
   const handleRecipeTypeChange = (type) => {
@@ -49,8 +65,22 @@ function Food() {
               <img src={recipe.image} className="card-img-top" alt={recipe.title} />
               <div className="card-body">
                 <h5 style={{ fontFamily: "Georgia" }} className="card-title">{recipe.title}</h5>
-                <button type="button" style={{ fontFamily: "Georgia" }} className="btn btn-primary" onClick={() => modalExpose(recipe)}>Add to your Event</button> {/* Apply the "btn-primary" class */}
-             <FoodModal showFlag={showFlag} handleClose={handleClose} item={clickedItem} />
+                <Button
+                style={{ fontFamily: "Georgia" }}
+                    className="btn btn-primary"
+                    onClick={() => {
+                      if (isAuthenticated&& chooseArr.length) {
+                        modalExpose(recipe);
+                      } else if (isAuthenticated&&!chooseArr.length) {
+                        alert("Add your event first!!!")
+                    } else if (!isAuthenticated) {
+                        loginWithRedirect()
+                      }
+                    }}
+                  >
+                    Add to your Event
+                  </Button>
+                               <FoodModal showFlag={showFlag} handleClose={handleClose} item={clickedItem} />
               </div>
             </div>
           </div>

@@ -1,9 +1,27 @@
 import React from "react";
 import { Button, Modal, Form, Image } from "react-bootstrap";
 import axios from "axios";
-
+import { useAuth0 } from "@auth0/auth0-react";
+import { useState ,useEffect } from "react";
 function GiftModal(props) {
+
+  const [chooseArr, setChooseArr] = useState([]);
   const user_email = localStorage.getItem("user_email");
+  const serverUrl = `${process.env.REACT_APP_serverURL}events/${user_email}`;
+  const getReq = () => {
+    axios.get(serverUrl).then((resp) => {
+      setChooseArr(resp.data);
+    });
+  };
+  useEffect(() => {
+    getReq();
+  }, [chooseArr]);
+  const { isAuthenticated, loginWithRedirect,user } = useAuth0();
+  if (isAuthenticated) {
+    localStorage.setItem("user_email", user.email);
+  }
+
+ 
 
   // Send a request to add the gift to the event
   const sendReq = async (e) => {
@@ -40,7 +58,15 @@ function GiftModal(props) {
       </Modal.Header>
       <Modal.Body>
         <Image src={props.gift.gift_image} width="100%" />
-        <Form onSubmit={sendReq}>
+        <Form onSubmit={(e) => {
+                      if (isAuthenticated&& chooseArr.length) {
+                        sendReq(e);
+                      } else if (isAuthenticated&&!chooseArr.length) {
+                        alert("Add your event first!!!")
+                    } else if (!isAuthenticated) {
+                        loginWithRedirect()
+                      }
+                    }}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>
               <b>title</b>

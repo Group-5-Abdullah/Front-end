@@ -20,10 +20,10 @@ export default function FlowerModal(props) {
     }
     useEffect(() => {
         getReq();
-    }, [])
+    }, [chooseArr])
 
 
- 
+
 
     const fetchRes = async (item) => {
         await fetch(`${process.env.REACT_APP_serverURL}flowerslist`, {
@@ -57,33 +57,18 @@ export default function FlowerModal(props) {
                 <Row xs={1} md={4} className="g-4">
                     {chooseArr.map((item) => {
                         return (
-                           
-                            <Col key={item.eventid}>
-                              
-                                <Card onClick={() => {
-                                fetchRes(item);
-                                props.handleClose();
-                            }}>
-                                    <Card.Title>{item.event}</Card.Title>
-                                    <Card.Body>
-                                        <p>
-                                            <b>descreption:</b>
-                                            {item.description}
-                                        </p>
-                                    </Card.Body>
-                                    <Card.Footer>
-                                        {/* <Button variant="primary" onClick={() => {
-                                            fetchRes(item);
-                                            props.handleClose();
-                                        }}>
-                                            Submit
-                                        </Button> */}
 
-                                    </Card.Footer>
-                                </Card>
+                            <Col key={item.eventid}>
+                                <Button variant="primary" onClick={() => {
+                                    fetchRes(item);
+                                    props.handleClose();
+                                }}>{item.event}
+                                    <Card >
+                                    </Card>
+                                    descreption : {item.description}</Button>
                             </Col>
-                            
-                               
+
+
                         );
                     })}
                 </Row>

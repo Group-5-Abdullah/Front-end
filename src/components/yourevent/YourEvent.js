@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 import Row from 'react-bootstrap/Row';
 
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import React from 'react'
 import { useEffect } from "react";
@@ -13,7 +13,7 @@ import { useState } from 'react';
 import YouEventModal from './YourEventModal';
 
 // import { Route, Routes } from 'react-router-dom';
-export default function YourEvent() {
+export default function YourEvent(props) {
     const [eventArr, setEventArr] = useState([])
     const userEmail = localStorage.getItem('user_email')
     const serverUrl = `${process.env.REACT_APP_serverURL}events/${userEmail}`;
@@ -28,15 +28,15 @@ export default function YourEvent() {
     useEffect(() => {
 
         sendReq();
-    }, [])
+    }, [eventArr])
 
-    const [showFlag, setShowFlag] = useState(false);
-    const [clickedEvent, setClickedEvent] = useState({});
-    const handleShow = (item) => {
+   
+  
+  
 
-        setClickedEvent(item);
-        setShowFlag(true);
-    }
+        
+       
+    
     const handleDelete = async (element) => {
        
         const requestOptions = {
@@ -48,9 +48,7 @@ export default function YourEvent() {
         const Data = await res.json();
         setEventArr(Data)
     }
-    const handleclose = () => {
-        setShowFlag(false);
-    }
+  
     const style1 = { backgroundColor: '#0dcaf0bd' };
     const style2 = { width: '18rem' };
     return (
@@ -62,9 +60,9 @@ export default function YourEvent() {
                 return(
                   
           <Col key={element.eventid} >
-          <Card border="danger" style={{ ...style1, ...style2 }} >
+          <Card  >
 
-              <Card.Body>
+              <Card.Body style={{ display:"flex",flexDirection:"column" ,alignContent:"center"}}>
 
                   <Card.Header style={{ color: 'yellow' }} >{element.event}</Card.Header>
                   <Card.Text style={{ color: 'red' }} >
@@ -77,12 +75,10 @@ export default function YourEvent() {
                       {`${element.date}`}
                   </Card.Text>
                   <Button variant="danger" style={{width:'50%'}} onClick={() => { handleDelete(element) }}>Delete</Button>
-                  <Button variant="success" style={{width:'50%'}} onClick={() => { handleShow(element) }}>Details</Button>
-                  {/* <Link className="nav-link" to="/Details">Details</Link>
-                  <Routes>
-                <Route path='/Details' element={<AboutUs />}></Route>
-                </Routes> */}
-                  <YouEventModal showFlag={showFlag} clickedEvent={clickedEvent} handleclose={handleclose}/>
+                  {/* <Button variant="success" style={{width:'50%'}} onClick={() => { handleShow(element) }}>Details</Button> */}
+                  <Link style={{border:"solid black 3px ", width:"40%" ,backgroundColor:"green",borderRadius:"15%" }} onClick={(item)=>{props.passedEvent(element)}} className="nav-link" to="/Details">Details</Link>
+                  
+                  {/* <YouEventModal showFlag={showFlag} clickedEvent={clickedEvent} handleclose={handleclose}/> */}
               </Card.Body>
           </Card>
       </Col>
