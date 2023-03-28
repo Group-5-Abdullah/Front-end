@@ -12,6 +12,7 @@ import YourEvent from './yourevent/YourEvent';
 import { Nav, Navbar } from 'react-bootstrap';
 import './Home.css' ;
 import AboutUs from './AboutUs/AboutUs';
+import HomeContent from './HomeContent';
 
 
 function Home() {
@@ -32,6 +33,7 @@ function Home() {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
+            <HomeContent/>
             <Routes>
 
                 <Route path='/music' element={<Music />}></Route>

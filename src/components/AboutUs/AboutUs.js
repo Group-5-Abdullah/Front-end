@@ -6,13 +6,19 @@ import './AboutUs.css';
 function AboutUs() {
     return (
         <>
-            <div id="aboutus" >
+            <div id="aboutus">
 
-                <h1>Welcome</h1>
-                <p>
-                    Events & Weddings by celbreto acknowledges the importance of your event and that you deserve a team that is focused on you every step of the way.
-                    We value earning your trust and executing events and weddings that exceed your expectations. We are a company whose foundation is built on quality, integrity, passion and enthusiasm for the events we create. We work with the finest vendors and are dedicated to bringing you the most progressive and innovative designs for your event. We work hard, laugh often, and never lose sight of delivering on your vision.
-                    Let us do the planning, design and execution of your big day, while you enjoy the celebration! </p>
+                <h1 >Turning a Vision into Reality</h1>
+             
+                <p> Creating gorgeous events that people will remember for a lifetime is what we do best.
+                    We are story tellers. We are a boutique planning and coordination company,
+                    here to execute your plans and streamline your event so you can sit back, relax, and enjoy yourself!
+                    We have been in business since 2005 and have been involved in over 350 weddings!
+                    In 2012 and 2015 we were voted Best Wedding Planner by the Arizona Foothills Magazine - Best of Our Valley.
+                    We pride ourselves in being easily accessible and available to our clients and working with honesty and integrity.
+                    Whether you are getting married or preparing for any special event, 
+                    it should be a celebration that you cherish forever!
+                    At A Day to Cherish, we specialize in memorable events!</p>
             </div></>
     )
 }

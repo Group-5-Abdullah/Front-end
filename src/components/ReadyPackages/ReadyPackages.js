@@ -15,7 +15,7 @@ export default function ReadyPackages (){
     }, [setpackagesArr])
 
     return (
-        <div style={{ backgroundColor: '#4e3c3c' }}>
+        <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.471)' }}>
 
             
             <PackagesMap  fetchRes={packagesArr} />

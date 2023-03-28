@@ -22,8 +22,8 @@ export default function PackagesCard(props) {
 
 
 
-    const style1 = { backgroundColor: '#0dcaf0bd' };
-    const style2 = { width: '18rem' };
+    // const style1 = { backgroundColor: '#0dcaf0bd' };
+    // const style2 = { width: '18rem' };
 
 
     return (
@@ -32,11 +32,11 @@ export default function PackagesCard(props) {
 
 
             <Col >
-                <Card border="danger" style={{ ...style1, ...style2 }} >
+                <Card >
 
-                    <Card.Body>
+                    <Card.Body style={{ fontFamily: "Georgia"  }} >
 
-                        <Card.Header style={{ color: 'black' }} >{`Pick one :) `}</Card.Header>
+                        <h3 style={{ color: 'black' }} >{`Design info`}</h3>
                         <Card.Text style={{ color: 'black' }} >
                             {`Gift Name: ${props.package.gift_title} `}
                         </Card.Text>
@@ -55,7 +55,7 @@ export default function PackagesCard(props) {
                                 <Card.Text style={{color:'black'}} >
                                     {`Artist Name : ${props.package.artist_name}`}
                                 </Card.Text>
-                        <Button variant="light" onClick={() => { 
+                        <Button variant="light" border ="black" onClick={() => { 
                             modalExpose();
                             
                              }}>add to your event</Button>

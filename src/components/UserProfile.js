@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import Home from "./Home";
+
 
 function UserProfile() {
     const { user, isAuthenticated, isLoading } = useAuth0();
@@ -15,11 +15,11 @@ function UserProfile() {
 
     return (
         isAuthenticated && (
-            <div>
-                <img src={user.picture} />
-                <h2>{user.name}</h2>
-                <p>{user.email}</p>
-            </div>
+            <div className="user-profile">
+            <img src={user.picture} alt="User profile" />
+            <div style={{ fontSize: "16px", fontWeight: "bold" }}>{user.name}</div>
+            <div style={{ fontSize: "12px" }}>{user.email}</div>
+          </div>
         )
     )
 };

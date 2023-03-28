@@ -10,7 +10,7 @@ import FlowerModal from './FlowerModal';
 function Flower() {
     const [flowersArr, setflowersArr] = useState([]);
 
-    const [clickedItem,setClickedItem]=useState({})
+    const [clickedItem, setClickedItem] = useState({})
 
     const SendReq = async () => {
         const serverURL = `${process.env.REACT_APP_serverURL}flowerslist`
@@ -36,28 +36,31 @@ function Flower() {
     };
 
 
- 
+
 
     return (
-        <div>
-            <Row xs={1} md={4} className="g-4">
+        <div className="container" style={{ fontFamily: "Georgia" ,  backgroundColor: 'rgba(255, 255, 255, 0.471)'  }}  >
+            <div className="overlayFlower">
+            <Row xs={1} md={4} className="g-4">  
                 {flowersArr.map((item) => {
                     return (
-                        <Col key={item.name} >
+                        <div className="Col" key={item.name} >
+                            <div className="card border-secondary flower-card"></div>
                             <Card style={{ width: '18rem', backgroundColor: 'gray' }}>
-                                <Card.Img variant="top" src={`${item.photo}`} />
-                                <Card.Title>{item.name}</Card.Title>
-                                <Button variant="primary" style={{ backgroundColor: 'gray' }} onClick={() => {
+                                <Card.Img className="card-img-top" height={'250px'} variant="top" src={`${item.photo}`} />
+                                <Card.Header>{item.name}</Card.Header>
+                                <Button className="btn btn-primary"  onClick={() => {
 
                                     modalExpose(item);
                                 }}>
-                                    add to my event </Button>
+                                    Add to your Event </Button>
                                 <FlowerModal showFlag={showFlag} handleClose={handleClose} item={clickedItem} />
                             </Card>
-                        </Col>)
+                        </div>)
                 })}
-            </Row>
+            </Row></div>
         </div>
+
     )
 }
 

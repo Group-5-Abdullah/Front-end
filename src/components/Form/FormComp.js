@@ -72,13 +72,14 @@ export default function FormComp() {
 return (
     <div >
         <div id='welcomeingCard' style={{ fontFamily: "Georgia" }} >
+      <div className="overlayCard">
         <h3 >Create your supplies for your event </h3>
-        <Button variant="primary" onClick={eventForm}>start</Button>
+        <Button variant="primary" onClick={eventForm}>Get start</Button></div>
         </div>
         {/*  ........        form part    ................................................................. */}
         <Modal show={showForm} onHide={eventForm} >
             <Modal.Header closeButton>
-                <Modal.Title>Create you'r event</Modal.Title>
+                <Modal.Title>Please complete the following form to receive additional information and a complimentary initial consultation.</Modal.Title>
             </Modal.Header>
 
             <Form onSubmit={saveToDB}>
