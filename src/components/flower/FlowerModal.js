@@ -57,8 +57,13 @@ export default function FlowerModal(props) {
                 <Row xs={1} md={4} className="g-4">
                     {chooseArr.map((item) => {
                         return (
+                           
                             <Col key={item.eventid}>
-                                <Card>
+                              
+                                <Card onClick={() => {
+                                fetchRes(item);
+                                props.handleClose();
+                            }}>
                                     <Card.Title>{item.event}</Card.Title>
                                     <Card.Body>
                                         <p>
@@ -67,16 +72,18 @@ export default function FlowerModal(props) {
                                         </p>
                                     </Card.Body>
                                     <Card.Footer>
-                                        <Button variant="primary" onClick={() => {
+                                        {/* <Button variant="primary" onClick={() => {
                                             fetchRes(item);
                                             props.handleClose();
                                         }}>
                                             Submit
-                                        </Button>
+                                        </Button> */}
 
                                     </Card.Footer>
                                 </Card>
                             </Col>
+                            
+                               
                         );
                     })}
                 </Row>

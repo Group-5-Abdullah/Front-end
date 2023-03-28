@@ -5,19 +5,19 @@ import Col from 'react-bootstrap/Col';
 
 import Row from 'react-bootstrap/Row';
 
-
+// import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import React from 'react'
 import { useEffect } from "react";
 import { useState } from 'react';
 import YouEventModal from './YourEventModal';
 
-
+// import { Route, Routes } from 'react-router-dom';
 export default function YourEvent() {
     const [eventArr, setEventArr] = useState([])
     const userEmail = localStorage.getItem('user_email')
     const serverUrl = `${process.env.REACT_APP_serverURL}events/${userEmail}`;
-    console.log(serverUrl);
+    // console.log(serverUrl);
     const sendReq = async () => {
         
         const result = await fetch(serverUrl);
@@ -44,9 +44,9 @@ export default function YourEvent() {
            
         };
         
-        const res = await fetch(`${process.env.REACT_APP_serverURL}events/${element.eventid}`, requestOptions);
+        const res = await fetch(`${process.env.REACT_APP_serverURL}events/${element.eventid}?user_email=${userEmail}`, requestOptions);
         const Data = await res.json();
-       
+        setEventArr(Data)
     }
     const handleclose = () => {
         setShowFlag(false);
@@ -78,6 +78,10 @@ export default function YourEvent() {
                   </Card.Text>
                   <Button variant="danger" style={{width:'50%'}} onClick={() => { handleDelete(element) }}>Delete</Button>
                   <Button variant="success" style={{width:'50%'}} onClick={() => { handleShow(element) }}>Details</Button>
+                  {/* <Link className="nav-link" to="/Details">Details</Link>
+                  <Routes>
+                <Route path='/Details' element={<AboutUs />}></Route>
+                </Routes> */}
                   <YouEventModal showFlag={showFlag} clickedEvent={clickedEvent} handleclose={handleclose}/>
               </Card.Body>
           </Card>

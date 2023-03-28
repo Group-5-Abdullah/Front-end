@@ -13,7 +13,7 @@ function Food() {
         setRecipes(response.data.results);
       })
       .catch(error => {
-        console.log(error);
+        // console.log(error);
       });
   }, [recipeType]);
 
@@ -36,7 +36,6 @@ function Food() {
 
   return (
     <div className="container" >
-      <div className="overlayfood">
       <h1 style={{ fontFamily: "Georgia"  }} >Select the food to add it to your event </h1>
       <div style={{ fontFamily: "Georgia" }} className="btn-group my-4" role="group">
         <button type="button" className={`btn btn-secondary ${recipeType === 'main course' ? 'active' : ''}`} onClick={() => handleRecipeTypeChange('main course')}>Main Course</button>
@@ -47,7 +46,7 @@ function Food() {
         {recipes.map(recipe => (
           <div className="col" key={recipe.id}>
             <div className="card border-secondary food-card"> {/* Add the "food-card" class */}
-              <img src={recipe.image} className="card-img-top" height={'250px'} alt={recipe.title} />
+              <img src={recipe.image} className="card-img-top" alt={recipe.title} />
               <div className="card-body">
                 <h5 style={{ fontFamily: "Georgia" }} className="card-title">{recipe.title}</h5>
                 <button type="button" style={{ fontFamily: "Georgia" }} className="btn btn-primary" onClick={() => modalExpose(recipe)}>Add to your Event</button> {/* Apply the "btn-primary" class */}
@@ -56,7 +55,7 @@ function Food() {
             </div>
           </div>
         ))}
-      </div></div> 
+      </div>
     </div>
   );
 }

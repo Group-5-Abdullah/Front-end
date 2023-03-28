@@ -18,8 +18,8 @@ export default function FormComp() {
     const addToDBURL = `${process.env.REACT_APP_serverURL}events`;
     const getData_URL = `${addToDBURL}/${localStorage.getItem('user_email')}`
     
-    console.log(getData_URL)
-    console.log(user_email)
+    // console.log(getData_URL)
+    // console.log(user_email)
 
 
     
@@ -42,18 +42,14 @@ export default function FormComp() {
             body: JSON.stringify({
                 "event": formData.event,
                 "location": formData.location,
-                "date": formData.location,
+                "date": formData.date,
                 "description": formData.description,
                 "user_email": formData.user_email
             })
         }
 
         fetch(addToDBURL, reqOption)
-            .then(res => res.json())
-            .then(data => console.log(data))
-            .catch((err) => {
-                console.log(err);
-            })
+       
 
         eventForm()
         
@@ -72,14 +68,13 @@ export default function FormComp() {
 return (
     <div >
         <div id='welcomeingCard' style={{ fontFamily: "Georgia" }} >
-      <div className="overlayCard">
         <h3 >Create your supplies for your event </h3>
-        <Button variant="primary" onClick={eventForm}>Get start</Button></div>
+        <Button variant="primary" onClick={eventForm}>start</Button>
         </div>
         {/*  ........        form part    ................................................................. */}
         <Modal show={showForm} onHide={eventForm} >
             <Modal.Header closeButton>
-                <Modal.Title>Please complete the following form to receive additional information and a complimentary initial consultation.</Modal.Title>
+                <Modal.Title>Create you'r event</Modal.Title>
             </Modal.Header>
 
             <Form onSubmit={saveToDB}>
