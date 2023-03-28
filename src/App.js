@@ -12,8 +12,8 @@ function App() {
   const { isAuthenticated } = useAuth0();
   return (
     <div className="App">
-    {isAuthenticated ? <Home /> : <LoginButton/>}
-    {isAuthenticated ? "" : <About/>}
+   <Home /> 
+    {/* {isAuthenticated ? "" : <About/>} */}
  
      {/* <UserProfile/>  */}
      <LogoutButton/>

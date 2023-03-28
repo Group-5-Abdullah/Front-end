@@ -44,7 +44,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 export default function Header() {
   const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
   const [showDropdown, setShowDropdown] = useState(false);
-
+  if(isAuthenticated){
+    localStorage.setItem('user_email',user.email);
+}
   const handleDropdown = () => {
     setShowDropdown(!showDropdown);
   }

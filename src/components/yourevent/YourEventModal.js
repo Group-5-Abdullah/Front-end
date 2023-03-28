@@ -11,7 +11,10 @@ import Ready from "./readypackages/Ready";
 
 export default function YouEventModal(props) {
     return (
-        <Modal show={props.showFlag} onHide={props.handleclose}>
+        <Modal
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+        show={props.showFlag} onHide={props.handleclose}>
             <Modal.Header style={{ backgroundColor: 'gray' }} closeButton>Your Event Information !</Modal.Header>
             <h3>Form</h3>
             <Event clickedEvent={props.clickedEvent}/>
