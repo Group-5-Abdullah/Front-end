@@ -12,6 +12,8 @@ import { useEffect } from "react";
 import { useState } from 'react';
 import YouEventModal from './YourEventModal';
 
+// import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+
 // import { Route, Routes } from 'react-router-dom';
 export default function YourEvent(props) {
     const [eventArr, setEventArr] = useState([])
@@ -64,14 +66,14 @@ export default function YourEvent(props) {
 
               <Card.Body style={{ display:"flex",flexDirection:"column" ,alignContent:"center"}}>
 
-                  <Card.Header style={{ color: 'yellow' }} >{element.event}</Card.Header>
-                  <Card.Text style={{ color: 'red' }} >
+                  <Card.Header style={{ color: 'black',fontSize:"50px",fontFamily:'fantasy' }} >{element.event}</Card.Header>
+                  <Card.Text style={{ color: 'black' }} >
                       {`${element.description}`}
                   </Card.Text>
-                  <Card.Text style={{ color: 'red' }} >
+                  <Card.Text style={{ color: 'black' }} >
                       {`${element.location}`}
                   </Card.Text>
-                  <Card.Text style={{ color: 'red' }} >
+                  <Card.Text style={{ color: 'black' }} >
                       {`${element.date}`}
                   </Card.Text>
                   <Button variant="danger" style={{width:'50%'}} onClick={() => { handleDelete(element) }}>Delete</Button>

@@ -8,6 +8,7 @@ import FlowerModal from './FlowerModal';
 import './Flower.css';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
+import SideBarComp from '../SideBarComp';
 function Flower() {
     const [flowersArr, setflowersArr] = useState([]);
 
@@ -56,6 +57,7 @@ function Flower() {
 
     return (
         <div className="container" style={{ fontFamily: "Georgia", backgroundColor: 'rgba(255, 255, 255, 0.471)' }}  >
+            <SideBarComp/>
             <div className="overlayFlower">
                 <Row xs={1} md={4} className="g-4">
                     {flowersArr.map((item) => {

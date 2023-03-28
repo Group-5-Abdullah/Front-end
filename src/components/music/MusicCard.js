@@ -8,6 +8,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 
 import MusicModal from './MusicModal';
+import SideBarComp from '../SideBarComp';
 
 export default function MusicCard(props) {
 
@@ -40,6 +41,7 @@ export default function MusicCard(props) {
     return (
 
         <div className="container" style={{ fontFamily: "Georgia"  }}  >
+          <SideBarComp/>
             <div className="overlayMusic">
     
                 <div className="col" key={props.music.id}>

@@ -1,11 +1,12 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import { useState ,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import React from 'react'
 import ReadyModal from './ReadyModal';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
+import SideBarComp from '../SideBarComp';
 
 export default function PackagesCard(props) {
 
@@ -43,7 +44,7 @@ export default function PackagesCard(props) {
     return (
 
         <div>
-
+            <SideBarComp />
 
             <Col >
                 <Card >
@@ -76,7 +77,7 @@ export default function PackagesCard(props) {
                         <Button variant="light" border="black" onClick={() => {
                             if (isAuthenticated && chooseArr.length) {
                                 modalExpose();
-                            } else if (isAuthenticated&&!chooseArr.length) {
+                            } else if (isAuthenticated && !chooseArr.length) {
                                 alert("Add your event first!!!")
                             } else if (!isAuthenticated) {
                                 loginWithRedirect()

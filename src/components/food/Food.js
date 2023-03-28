@@ -4,6 +4,7 @@ import './Food.css';
 import FoodModal from './FoodModal';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Button } from 'react-bootstrap';
+import SideBarComp from '../SideBarComp';
 function Food() {
 
   const [chooseArr, setChooseArr] = useState([]);
@@ -52,6 +53,7 @@ function Food() {
 
   return (
     <div className="container" >
+      <SideBarComp/>
       <h1 style={{ fontFamily: "Georgia"  }} >Select the food to add it to your event </h1>
       <div style={{ fontFamily: "Georgia" }} className="btn-group my-4" role="group">
         <button type="button" className={`btn btn-secondary ${recipeType === 'main course' ? 'active' : ''}`} onClick={() => handleRecipeTypeChange('main course')}>Main Course</button>

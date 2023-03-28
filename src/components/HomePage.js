@@ -14,29 +14,20 @@ import { Link } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
 import { useState } from "react";
 import './HomePage.css';
+import SideBarComp from "./SideBarComp";
 // import AboutUs from './AboutUs/AboutUs';
 // import HomeContent from './HomeContent';
 
 export default function HomePage() {
 
-    const [clickedEvent, setClickedEvent] = useState({})
+
 
 
     return (
-        <div className="myHome">
-            <Navbar bg="light" expand="sm" fixed="bottom"   >
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav  style={{ fontFamily: "Georgia",marginTop:"5%" }}  className="flex-column" >
-
-                        <Link className="nav-link" to="/music">Music</Link>
-                        <Link className="nav-link" to="/flower">Flower</Link>
-                        <Link className="nav-link" to="/food">Food</Link>
-                        <Link className="nav-link" to="/gift">Gift</Link>
-                        <Link className="nav-link" to="/readypackages">Our designs</Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+        <div>
+            <div>
+            </div>
+            <SideBarComp />
             <div>
                 <FormComp />
                 <HomeContent />
