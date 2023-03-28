@@ -16,7 +16,7 @@ export default function Music() {
     }, [])
 
     return (
-        <div style={{ backgroundColor: '#4e3c3c' }}>
+        <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.471)' }}>
 
             
             <MusicMap  fetchRes={musicArr} />

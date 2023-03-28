@@ -1,15 +1,10 @@
 body {
     
-        background-image: url('https://www.rockmywedding.co.uk/1800x1800/wp-content/uploads/sites/1/nggallery/hannah-stuart-2/NICK-WALKER-PHOTOGRAPHY-HANNAH-STUART-10.jpg?fit=1');
         background-color: rgba(255, 255, 255, 0.9);
-         background-size: cover;
         text-size-adjust: 50;
-        padding: 500px;
         color: white;
     
 }
 #aboutus {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    font-family: "Georgia", Arial, sans-serif;
   }
