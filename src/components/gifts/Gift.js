@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 
 import ChooseModal from './ChooseModal';
+import SideBarComp from '../SideBarComp';
 
 
 
@@ -16,6 +17,7 @@ function Gift (props){
       };
     return(
         <div>
+            <SideBarComp/>
         <Card key={props.item.gift_title}>
             <Card.Title>{props.item.gift_title}</Card.Title>
             <Card.Img src={props.item.gift_image} variant='top'></Card.Img>
