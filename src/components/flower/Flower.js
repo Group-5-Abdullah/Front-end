@@ -4,8 +4,8 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-
 import FlowerModal from './FlowerModal';
+import './Flower.css';
 
 function Flower() {
     const [flowersArr, setflowersArr] = useState([]);
@@ -45,8 +45,8 @@ function Flower() {
                 {flowersArr.map((item) => {
                     return (
                         <div className="Col" key={item.name} >
-                            <div className="card border-secondary flower-card"></div>
-                            <Card style={{ width: '18rem', backgroundColor: 'gray' }}>
+                           
+                            <Card className='flower-card' style={{ width: '18rem', backgroundColor: 'white' }}>
                                 <Card.Img className="card-img-top" height={'250px'} variant="top" src={`${item.photo}`} />
                                 <Card.Header>{item.name}</Card.Header>
                                 <Button className="btn btn-primary"  onClick={() => {
