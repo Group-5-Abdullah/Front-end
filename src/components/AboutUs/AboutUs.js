@@ -1,9 +1,15 @@
 import React from "react";
 import './AboutUs.css';
+import { Card } from 'antd';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import abdelrahmanImg from './../../images/abdelrahmanImg.jpg' 
 
 
 
 function AboutUs() {
+    const { Meta } = Card;
+    const arr=[{name:"Abdelrahman Elatrash",img:abdelrahmanImg},{name:"Abdullah Shaghnoba",img:""},{name:"Sara Alkhateeb",img:""},{name:"Abdulkareem Abunabhan",img:""},{name:"Amer Al-Omari",img:""}];
     return (
         <>
             <div id="aboutus">
@@ -19,7 +25,23 @@ function AboutUs() {
                     Whether you are getting married or preparing for any special event, 
                     it should be a celebration that you cherish forever!
                     At A Day to Cherish, we specialize in memorable events!</p>
-            </div></>
+            </div>
+            <Row xs={1} md={3} className="g-4">
+            {arr.map((item) => (
+            <Col>
+            <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src={item.img} />}>
+                    
+                    <Meta title={item.name}  />
+                    
+                </Card>
+                </Col>
+                ))}
+                </Row>
+
+            </>
     )
 }
 export default AboutUs;
