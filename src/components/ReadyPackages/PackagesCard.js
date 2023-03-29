@@ -71,7 +71,7 @@ export default function PackagesCard(props) {
                             {`Artist Name : ${props.package.artist_name}`}
                         </Card.Text>
                         <Card.Text style={{ color: 'black' }} >
-                            {`Artist Name : ${props.package.food_title}`}
+                            {`${props.package.food_title}`}
                         </Card.Text>
                         <Card.Img height={'250px'} variant="top" src={`${props.package.food_image} `} />
                         <Button variant="light" border="black" onClick={() => {

@@ -25,7 +25,7 @@ function Flower() {
 
     useEffect(() => {
         SendReq();
-    }, [])
+    }, [flowersArr])
 
 
     const [showFlag, setShowFlag] = useState(false);

@@ -15,7 +15,7 @@ export default function YouEventModal(props) {
         <div>
         
      
-            <header style={{ backgroundColor: 'gray' }} closeButton>Your Event Information !</header>
+            <header style={{ backgroundColor: 'gray' }} >Your Event Information !</header>
             <h3>Form</h3>
             
             <br/>

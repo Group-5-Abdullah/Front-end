@@ -1,22 +1,27 @@
 
 
 import { useEffect, useState } from "react";
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 // import axios from 'axios';
+import { Card } from 'antd';
 
+
+
+import React from 'react'
 // function useForceUpdate() {
 //     const [value, setValue] = useState(0);
 //     return () => setValue(value => value + 1)
 // }
 export default function FoodYourEvent(props) {
-    
+    const { Meta } = Card;
+
     const [foodArray, setFoodArray] = useState([]);
     // const forceUpdate = useForceUpdate();
     const serverURL = `${process.env.REACT_APP_serverURL}food?eventid=${props.clickedEvent.eventid}`;
-    
+
     // console.log(serverURL)
     const fetchData = () => {
         fetch(serverURL)
@@ -32,9 +37,9 @@ export default function FoodYourEvent(props) {
 
     }
 
-// .....      delete food   .......................................................
-       const deleteFood = (id) => {
-        
+    // .....      delete food   .......................................................
+    const deleteFood = (id) => {
+
         const deleteURL = `${process.env.REACT_APP_serverURL}food?id=${id}&eventid=${props.clickedEvent.eventid}` 
         fetch(deleteURL, { method: 'DELETE' })
             .then((res) => {
@@ -51,27 +56,34 @@ export default function FoodYourEvent(props) {
 
 
 
-useEffect(() => {
-    fetchData();
-    // forceUpdate()
-}, [])
+
+    useEffect(() => {
+        fetchData();
+        // forceUpdate()
+    }, [foodArray])
 
 
-return (
-    <Row xs={1} md={4} className="g-4">
-        {foodArray.map((item) => {
-            return (
-                <Col key={item.id} >
-                    <Card style={{ width: '18rem', backgroundColor: 'gray' }}>
-                        <Card.Img variant="top" src={`${item.food_image}`} />
-                        <Card.Title>{item.food_title}</Card.Title>
+    return (
+        <Row xs={1} md={4} className="g-4">
+            {foodArray.map((item) => {
+                return (
+                    <Col key={item.id} >
+                    
+                        <Card
+                            hoverable
+                            style={{ width: 240 }}
+                            cover={<img width={"100%"} alt="example" src={item.food_image} />}
+                        >
+                            
+                            {item.food_title}
+                            <Meta />
+                            <br />
+                            <Button variant="danger" style={{ width: '100%' }} onClick={()=>{deleteFood(item.id)}}>Delete</Button>
+                        </Card>
 
-                        <Button variant="danger" onClick={()=>{deleteFood(item.id)}}>delete </Button>
-
-                    </Card>
-                </Col>)
-        })}
-    </Row>
-)
+                    </Col>)
+            })}
+        </Row>
+    )
 }
 

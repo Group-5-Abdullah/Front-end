@@ -20,7 +20,7 @@ export default function Ready (props){
     }, [])
 
     return (
-        <div style={{ backgroundColor: '#4e3c3c' }}>
+        <div style={{ backgroundColor: 'white' }}>
 
             
             <ReadyMap setDELETEDArr={setDELETEDArr} clickedEvent={props.clickedEvent}  fetchRes={readyEventArr} />
