@@ -16,9 +16,13 @@ function Gift (props){
         setShowFlag(false);
       };
     return(
-        <div>
+        <div >
+            
             <SideBarComp/>
-        <Card key={props.item.gift_title}>
+
+            <div style={{ zIndex:"3", alignContent:"space-around" ,textAlign:"center" , maxWidth:"90%"}}>
+
+        <Card key={props.item.gift_title} >
             <Card.Title>{props.item.gift_title}</Card.Title>
             <Card.Img src={props.item.gift_image} variant='top'></Card.Img>
 
@@ -30,6 +34,7 @@ function Gift (props){
                         item={props.item} key={props.item.gift_title}/>
             
             </Card>
+            </div>
 
 
 

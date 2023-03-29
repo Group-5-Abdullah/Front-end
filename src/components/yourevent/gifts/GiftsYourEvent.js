@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import Card from 'react-bootstrap/Card';
+
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
@@ -9,7 +9,7 @@ import { Card } from 'antd';
 
 
 
-// import React from 'react'
+
 export default function GiftsYourEvent(props) {
     const { Meta } = Card;
     const [clickedItem, setClickedItem] = useState({});
@@ -43,15 +43,7 @@ export default function GiftsYourEvent(props) {
                 {giftsArr.map((item) => {
                     return (
                         <Col key={item.gift_image} >
-                            {/* <Card style={{ width: '18rem', backgroundColor: 'gray' }}>
-                                <Card.Img variant="top" src={`${item.gift_image}`} />
-                                <Card.Title>{item.gift_title}</Card.Title>
-                                <Button variant="danger"  onClick={()=>{
-                                    handleDelete(item);
-                                }}>
-                                    delete </Button>
-
-                            </Card> */}
+                         
                             <Card
                                 hoverable
                                 style={{ width: 240 }}

@@ -1,0 +1,11 @@
+.nav-link1{
+    margin:0 auto ;
+     width: 50%;
+     height:37px;
+     background-Color:#88c070;
+     border-radius:5%;
+
+}
+.nav-link1:hover {
+    background-color:#5d7e4e;
+  }

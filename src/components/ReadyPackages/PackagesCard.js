@@ -37,9 +37,6 @@ export default function PackagesCard(props) {
 
 
 
-    // const style1 = { backgroundColor: '#0dcaf0bd' };
-    // const style2 = { width: '18rem' };
-
 
     return (
 
@@ -49,32 +46,36 @@ export default function PackagesCard(props) {
             <Col >
                 <Card >
 
-                    <Card.Body style={{ fontFamily: "Georgia" }} >
+                    <Card.Body style={{ fontFamily: "Georgia",height:"200vh",display:"flex",flexDirection:"column" ,alignItems:"space-between" }} >
 
                         <h3 style={{ color: 'black' }} >{`Design info`}</h3>
-                        <Card.Text style={{ color: 'black' }} >
+                        <Card.Text style={{ color: 'black', height:"250px" }} >
                             {`Gift Name: ${props.package.gift_title} `}
                         </Card.Text>
                         <Card.Img height={'250px'} variant="top" src={`${props.package.gift_image} `} />
-                        <Card.Text style={{ color: 'black' }} >
+                        <Card.Text style={{ color: 'black', height:"250px" }} >
                             {`Gift Price : ${props.package.gift_price}`}
                         </Card.Text>
-                        <Card.Text style={{ color: 'black' }} >
+                        <Card.Text style={{ color: 'black', height:"250px" }} >
                             {` ${props.package.flower_name}`}
                         </Card.Text>
                         <Card.Img height={'250px'} variant="top" src={`${props.package.flower_image} `} />
-                        <Card.Text style={{ color: 'black' }} >{`Song Title : ${props.package.track_name}`}</Card.Text>
-                        <Card.Text style={{ color: 'black' }} >
+                        <br/>
+                        <br/>
+                        <Card.Img height={'250px'} variant="top" src={`https://img.freepik.com/free-vector/elegant-musical-notes-music-chord-background_1017-20759.jpg`} />
+
+                        <Card.Text style={{ color: 'black', height:"250px" }} >{`Song Title : ${props.package.track_name}`}</Card.Text>
+                        <Card.Text style={{ color: 'black',height:"250px" }} >
                             <a href={props.package.track_url}>{props.package.track_name}</a>
                         </Card.Text>
-                        <Card.Text style={{ color: 'black' }} >
+                        <Card.Text style={{ color: 'black', height:"250px" }} >
                             {`Artist Name : ${props.package.artist_name}`}
                         </Card.Text>
-                        <Card.Text style={{ color: 'black' }} >
+                        <Card.Text style={{ color: 'black',height:"250px" }} >
                             {`${props.package.food_title}`}
                         </Card.Text>
                         <Card.Img height={'250px'} variant="top" src={`${props.package.food_image} `} />
-                        <Button variant="light" border="black" onClick={() => {
+                        <Button variant="light" border="black" style={{width:"100%",alignSelf:"flex-end" ,backgroundColor:"#88c070"}}  onClick={() => {
                             if (isAuthenticated && chooseArr.length) {
                                 modalExpose();
                             } else if (isAuthenticated && !chooseArr.length) {

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-// import Card from 'react-bootstrap/Card';
+
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
@@ -9,7 +9,7 @@ import { Card } from 'antd';
 
 
 
-// import React from 'react'
+
 
 function FlowerYourEvent(props) {
     const { Meta } = Card;
@@ -46,15 +46,7 @@ function FlowerYourEvent(props) {
                 {myFlowersArr.map((item) => {
                     return (
                         <Col key={item.flower_image} >
-                            {/* <Card style={{ width: '18rem', backgroundColor: 'gray' }}>
-                                <Card.Img variant="top" src={`${item.flower_image}`} />
-                                <Card.Title>{item.flower_title}</Card.Title>
-                                <Button variant="danger"  onClick={()=>{
-                                    handleDelete(item);
-                                }}>
-                                    delete </Button>
-
-                            </Card> */}
+                           
                             <Card
                                 hoverable
                                 style={{ width: 240 }}

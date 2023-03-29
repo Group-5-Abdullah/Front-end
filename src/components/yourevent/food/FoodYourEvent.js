@@ -11,18 +11,15 @@ import { Card } from 'antd';
 
 
 import React from 'react'
-// function useForceUpdate() {
-//     const [value, setValue] = useState(0);
-//     return () => setValue(value => value + 1)
-// }
+
 export default function FoodYourEvent(props) {
     const { Meta } = Card;
 
     const [foodArray, setFoodArray] = useState([]);
-    // const forceUpdate = useForceUpdate();
+   
     const serverURL = `${process.env.REACT_APP_serverURL}food?eventid=${props.clickedEvent.eventid}`;
 
-    // console.log(serverURL)
+  
     const fetchData = () => {
         fetch(serverURL)
             .then(res => res.json())
@@ -59,7 +56,7 @@ export default function FoodYourEvent(props) {
 
     useEffect(() => {
         fetchData();
-        // forceUpdate()
+      
     }, [foodArray])
 
 

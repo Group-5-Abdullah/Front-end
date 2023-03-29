@@ -54,11 +54,16 @@ function Food() {
   return (
     <div className="container" >
       <SideBarComp/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <h1 style={{ fontFamily: "Georgia"  }} >Select the food to add it to your event </h1>
       <div style={{ fontFamily: "Georgia" }} className="btn-group my-4" role="group">
-        <button type="button" className={`btn btn-secondary ${recipeType === 'main course' ? 'active' : ''}`} onClick={() => handleRecipeTypeChange('main course')}>Main Course</button>
-        <button type="button" className={`btn btn-secondary ${recipeType === 'breakfast' ? 'active' : ''}`} onClick={() => handleRecipeTypeChange('breakfast')}>Breakfast</button>
-        <button type="button" className={`btn btn-secondary ${recipeType === 'dessert' ? 'active' : ''}`} onClick={() => handleRecipeTypeChange('dessert')}>Dessert</button>
+        <button style={{ margin:"10px" }} type="button" className={`btn btn-secondary ${recipeType === 'main course' ? 'active' : ''}`} onClick={() => handleRecipeTypeChange('main course')}>Main Course</button>
+        <button style={{ margin:"10px" }} type="button" className={`btn btn-secondary ${recipeType === 'breakfast' ? 'active' : ''}`} onClick={() => handleRecipeTypeChange('breakfast')}>Breakfast</button>
+        <button style={{ margin:"10px" }} type="button" className={`btn btn-secondary ${recipeType === 'dessert' ? 'active' : ''}`} onClick={() => handleRecipeTypeChange('dessert')}>Dessert</button>
       </div>
       <div className="row row-cols-1 row-cols-md-4 g-4 mt-4">
         {recipes.map(recipe => (

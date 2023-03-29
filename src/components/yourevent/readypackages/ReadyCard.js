@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
+
 import Col from 'react-bootstrap/Col';
 
 
@@ -7,7 +7,7 @@ import { Card } from 'antd';
 
 
 
-// import React from 'react'
+
 import React from 'react'
 
 

@@ -4,10 +4,10 @@ import FoodYourEvent from "./food/FoodYourEvent";
 import Event from './form/Event'
 import GiftsYourEvent from "./gifts/GiftsYourEvent";
 import MusicYourEvent from "./music2/MusicYourEvent";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+
+
 import Ready from "./readypackages/Ready";
-import { Card } from "react-bootstrap";
+
 
 
 export default function YouEventModal(props) {
