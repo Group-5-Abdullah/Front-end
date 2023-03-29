@@ -29,11 +29,11 @@ export default function Header() {
         <Navbar.Brand style={{ fontSize: "30px", fontFamily: "Georgia", fontWeight: "bolder", color: '#663300' }}>Celebrate Pro</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
-          <Nav style={{ fontFamily: "Georgia", fontWeight: "bolder", color: '#330000' }} className="ms-auto">
-            <Nav.Link as={Link} to="/" activeclassname="active-link" style={{ color: '#330000' }}>Home</Nav.Link>
-            <Nav.Link as={Link} to="/yourevent" activeclassname="active-link" style={{ color: '#330000' }}>My Event</Nav.Link>
-            <Nav.Link as={Link} to="/readypackages" activeclassname="active-link" style={{ color: '#330000' }}>Our designs</Nav.Link>
-            <Nav.Link as={Link} to="/aboutus" activeclassname="active-link" style={{ color: '#330000' }}>About Us</Nav.Link>
+          <Nav style={{ fontFamily: "Georgia", fontWeight: "bolder", color: '#663300' }} className="ms-auto">
+            <Nav.Link as={Link} to="/" activeclassname="active-link" style={{ color: '#663300' }}>Home</Nav.Link>
+            <Nav.Link as={Link} to="/yourevent" activeclassname="active-link" style={{ color: '#663300' }}>My Event</Nav.Link>
+            <Nav.Link as={Link} to="/readypackages" activeclassname="active-link" style={{ color: '#663300' }}>Our designs</Nav.Link>
+            <Nav.Link as={Link} to="/aboutus" activeclassname="active-link" style={{ color: '#663300' }}>About Us</Nav.Link>
             <Nav.Link id="" style={{ fontFamily: "Georgia" }}>
 
               {isAuthenticated && user ? (
@@ -47,7 +47,7 @@ export default function Header() {
                   )}
                 </div>
               ) : (
-                <span onClick={() => loginWithRedirect()} className="auth-link" style={{ color: '#330000' }}>Login</span>
+                <span onClick={() => loginWithRedirect()} className="auth-link" style={{ color: '#663300' }}>Login</span>
               )}
             </Nav.Link>
           </Nav>

@@ -10,16 +10,16 @@ import Container from 'react-bootstrap/Container';
 import React from 'react'
 import { useEffect } from "react";
 import { useState } from 'react';
-import YouEventModal from './YourEventModal';
 
-// import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+import './YourEvent.css';
 
-// import { Route, Routes } from 'react-router-dom';
+
+
 export default function YourEvent(props) {
     const [eventArr, setEventArr] = useState([])
     const userEmail = localStorage.getItem('user_email')
     const serverUrl = `${process.env.REACT_APP_serverURL}events/${userEmail}`;
-    // console.log(serverUrl);
+ 
     const sendReq = async () => {
         
         const result = await fetch(serverUrl);
@@ -64,7 +64,7 @@ export default function YourEvent(props) {
           <Col key={element.eventid} >
           <Card  >
 
-              <Card.Body style={{ display:"flex",flexDirection:"column" ,alignContent:"center"}}>
+              <Card.Body >
 
                   <Card.Header style={{ color: 'black',fontSize:"50px",fontFamily:'fantasy' }} >{element.event}</Card.Header>
                   <Card.Text style={{ color: 'black' }} >
@@ -77,10 +77,10 @@ export default function YourEvent(props) {
                       {`${element.date}`}
                   </Card.Text>
                   <Button variant="danger" style={{width:'50%'}} onClick={() => { handleDelete(element) }}>Delete</Button>
-                  {/* <Button variant="success" style={{width:'50%'}} onClick={() => { handleShow(element) }}>Details</Button> */}
-                  <Link style={{border:"solid black 3px ", width:"40%" ,backgroundColor:"green",borderRadius:"15%" }} onClick={(item)=>{props.passedEvent(element)}} className="nav-link" to="/Details">Details</Link>
                   
-                  {/* <YouEventModal showFlag={showFlag} clickedEvent={clickedEvent} handleclose={handleclose}/> */}
+                  <Link  onClick={(item)=>{props.passedEvent(element)}} className="nav-link nav-link1 " to="/Details">Details</Link>
+                  
+                  
               </Card.Body>
           </Card>
       </Col>

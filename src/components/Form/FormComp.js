@@ -67,10 +67,13 @@ export default function FormComp() {
 
 return (
     <div >
-        <div id='welcomeingCard' style={{ fontFamily: "Georgia" }} >
-        <h3 >Create your supplies for your event </h3>
-        <Button variant="primary" onClick={eventForm}>start</Button>
-        </div>
+       <div id='welcomeingCard' style={{ display : "flex-row"  }} >
+                <h3 >Celebrate Pro</h3> <p>, where meaningful details create signature events.</p>
+                    <p>Exceptional service, impeccable taste, and a smiling face to help you through design, planning, and execution.</p>
+                    <p>For a thoughtful event - one that tells your unique story -
+                    contact Celebrate Pro to schedule your consultation</p> 
+                <Button variant="primary" onClick={eventForm}>start</Button>
+            </div>
         {/*  ........        form part    ................................................................. */}
         <Modal show={showForm} onHide={eventForm} >
             <Modal.Header closeButton>

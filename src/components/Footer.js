@@ -17,7 +17,7 @@ function Footer() {
             <p style={{fontSize: "15px"} } >&copy; Celebrate Pro App 2023 </p>
           </Col>
           <Col sm={12} md={4}>
-            <p>00962799113399-Amman.Jordan</p>
+            <p>00962+-Amman.Jordan</p>
           </Col>
           <Col sm={12} md={4}>
             <div className='social-icons'>
