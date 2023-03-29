@@ -24,7 +24,7 @@ export default function MusicYourEvent (props){
     }, [])
 
     return (
-        <div style={{ backgroundColor: '#4e3c3c' }}>
+        <div style={{ backgroundColor: 'white' }}>
 
             
             <MusicEventMap setDELETEDArr={setDELETEDArr} clickedEvent={props.clickedEvent}  fetchRes={musicEventArr} />
