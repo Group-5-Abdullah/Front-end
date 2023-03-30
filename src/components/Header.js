@@ -33,7 +33,7 @@ export default function Header() {
             <Nav.Link as={Link} to="/" activeclassname="active-link" style={{ color: '#663300' }}>Home</Nav.Link>
             <Nav.Link as={Link} to="/yourevent" activeclassname="active-link" style={{ color: '#663300' }}>My Event</Nav.Link>
             <Nav.Link as={Link} to="/readypackages" activeclassname="active-link" style={{ color: '#663300' }}>Our designs</Nav.Link>
-            <Nav.Link as={Link} to="/aboutus" activeclassname="active-link" style={{ color: '#663300' }}>About Us</Nav.Link>
+            <Nav.Link as={Link} to="/about" activeclassname="active-link" style={{ color: '#663300' }}>About Us</Nav.Link>
             <Nav.Link id="" style={{ fontFamily: "Georgia" }}>
 
               {isAuthenticated && user ? (

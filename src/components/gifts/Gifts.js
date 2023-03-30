@@ -15,7 +15,13 @@ useEffect(()=>{
   sendReq()
 },[])
   return (
+   
     <Row xs={1} md={4} className="g-4">
+       <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
       {datafromApi.map((item) => {
         return (
           <Col key={item.gift_title}>

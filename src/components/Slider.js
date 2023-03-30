@@ -4,6 +4,11 @@ import Carousel from 'react-bootstrap/Carousel';
 function Slider() {
   return (
     <div className='slider-container'  style={{width:"90%", margin: "0 auto" }}>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <Carousel >
         <Carousel.Item className='carousel-item'>
           <img

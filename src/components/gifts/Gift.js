@@ -19,6 +19,7 @@ function Gift (props){
         <div >
             
             <SideBarComp/>
+            
 
             <div style={{ zIndex:"3", alignContent:"space-around" ,textAlign:"center" , maxWidth:"90%"}}>
 

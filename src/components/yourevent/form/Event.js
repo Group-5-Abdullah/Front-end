@@ -13,6 +13,7 @@ export default function Event(props){
          
          
             <Table striped bordered hover size="sm">
+      
                 <thead>
                     <tr>
                         {arr.map((item,i) => (

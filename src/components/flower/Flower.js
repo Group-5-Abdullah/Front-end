@@ -58,6 +58,11 @@ function Flower() {
     return (
         <div className="container" style={{ fontFamily: "Georgia", backgroundColor: 'rgba(255, 255, 255, 0.471)' }}  >
             <SideBarComp/>
+            <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
             <div className="overlayFlower">
                 <Row xs={1} md={4} className="g-4">
                     {flowersArr.map((item) => {

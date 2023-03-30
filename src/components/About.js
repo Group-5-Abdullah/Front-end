@@ -2,14 +2,14 @@ import React from "react";
 import './About.css';
 import Header from "./Header";
 import Footer from "./Footer" ;
-import abdallahImg from './../../images/abdallah.jpg' ;
-import abdulkaremImg from './../../images/abdulkarem.jpg' ;
-import saraImg from './../../images/sara.jpg' ;
-import amerImg from './../../images/amer.jpg' ;
+import abdallahImg from '../images/abdallah.jpg' ;
+import abdulkaremImg from '../images/abdulkarem.jpg' ;
+import saraImg from '../images/sara.jpg' ;
+import amerImg from '../images/amer.jpg' ;
 import { Card } from 'antd';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import abdelrahmanImg from './../../images/abdelrahmanImg.jpg' ;
+import abdelrahmanImg from '../images/abdelrahmanImg.jpg' ;
 
 function About() {
     const { Meta } = Card;
