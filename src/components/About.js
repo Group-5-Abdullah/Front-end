@@ -1,7 +1,6 @@
 import React from "react";
 import './About.css';
-import Header from "./Header";
-import Footer from "./Footer" ;
+
 import abdallahImg from '../images/abdallah.jpg' ;
 import abdulkaremImg from '../images/abdulkarem.jpg' ;
 import saraImg from '../images/sara.jpg' ;
@@ -16,7 +15,7 @@ function About() {
     const arr=[{name:"Abdelrahman Elatrash",img:abdelrahmanImg},{name:"Abdullah Shaghnoba",img:abdallahImg},{name:"Sara Alkhateeb",img:saraImg},{name:"Abdulkareem Abunabhan",img:abdulkaremImg},{name:"Amer Al-Omari",img:amerImg}];
     return (
         <>
-        <Header />
+       
             <div id="aboutus" >
 
                 <h1 style={{fontSize: "35px"}} >Welcome</h1>
@@ -42,7 +41,7 @@ function About() {
                 ))}
                 </Row>
 
-            <Footer/>
+          
             </>
     )
 }
