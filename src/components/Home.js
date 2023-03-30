@@ -8,7 +8,7 @@ import ReadyPackages from './ReadyPackages/ReadyPackages';
 import YourEvent from './yourevent/YourEvent';
 
 import './Home.css' ;
-import AboutUs from './AboutUs/AboutUs';
+import About from './About';
 
 import HomePage from './HomePage';
 import YouEventModal from './yourevent/YourEventModal';
@@ -36,7 +36,7 @@ function Home() {
                 <Route path='/gift' element={<Gifts />}></Route>
                 <Route path='/readypackages' element={<ReadyPackages />}></Route>
                 <Route path='/yourevent' element={<YourEvent passedEvent = {passedEvent} />}></Route>
-                <Route path='/aboutus' element={<AboutUs/>}></Route>
+                <Route path='/about' element={<About/>}></Route>
             </Routes>
           
     </>

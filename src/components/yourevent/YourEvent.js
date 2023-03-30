@@ -54,9 +54,13 @@ export default function YourEvent(props) {
     const style1 = { backgroundColor: '#0dcaf0bd' };
     const style2 = { width: '18rem' };
     return (
-        <div >
+        <div style={{minHeight:"100vh"}} >
               <Container >
-           
+              <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
            <Row xs={1} md={4} className="g-4">
           {  eventArr.map((element)=>{
                 return(

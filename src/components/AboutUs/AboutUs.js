@@ -13,7 +13,11 @@ function AboutUs() {
     return (
         <>
             <div id="aboutus">
-
+            <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
                 <h1 >Turning a Vision into Reality</h1>
              
                 <p> Creating gorgeous events that people will remember for a lifetime is what we do best.

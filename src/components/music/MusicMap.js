@@ -7,7 +7,11 @@ export default function MusicMap (props){
     
     return (
         <Container>
-           
+             <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
              <Row xs={1} md={4} className="g-4">
             {  props.fetchRes.map((element)=>{
                   return(
